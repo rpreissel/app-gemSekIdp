@@ -114,6 +114,7 @@ public class FedIdpController {
   private final ObjectMapper objectMapper;
   private final GsiConfiguration gsiConfiguration;
   private final JwksBuilder jwksBuilder;
+  private final de.gematik.idp.gsi.server.services.DeviceBindingService deviceBindingService;
 
   @Autowired FederationPrivKey esSigPrivKey;
   @Autowired FederationPrivKey tokenSigPrivKey;
@@ -159,6 +160,60 @@ public class FedIdpController {
         "jwk-set+json");
   }
 
+  /**
+   * Device registration endpoint for device binding
+   *
+   * @param deviceId unique device identifier
+   * @param deviceType type of device (e.g., "android", "ios", "web")
+   * @param deviceName optional device name
+   * @return success response
+   */
+  @ResponseBody
+  @PostMapping(
+      value = "/device/register",
+      produces = "application/json;charset=UTF-8",
+      consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+  public Map<String, String> registerDevice(
+      @RequestParam(name = "device_id") @NotEmpty final String deviceId,
+      @RequestParam(name = "device_type") @NotEmpty final String deviceType,
+      @RequestParam(name = "device_name", required = false) final String deviceName) {
+
+    log.info("Device registration request: deviceId={}, deviceType={}", deviceId, deviceType);
+
+    deviceBindingService.registerDevice(deviceId, deviceType, deviceName);
+
+    return Map.of(
+        "status", "registered",
+        "device_id", deviceId,
+        "device_type", deviceType);
+  }
+
+  /**
+   * Pre-authentication endpoint to create a pre-auth token
+   *
+   * @param userId user identifier (KVNR)
+   * @param deviceId device identifier
+   * @return PreAuthResponse with token and expiry
+   */
+  @ResponseBody
+  @PostMapping(
+      value = "/pre-auth",
+      produces = "application/json;charset=UTF-8",
+      consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+  public de.gematik.idp.gsi.server.data.PreAuthResponse createPreAuthToken(
+      @RequestParam(name = "user_id") @Pattern(regexp = "^[A-Z]\\d{9}$") final String userId,
+      @RequestParam(name = "device_id") @NotEmpty final String deviceId) {
+
+    log.info("Pre-authentication request: userId={}, deviceId={}", userId, deviceId);
+
+    final String preAuthToken = deviceBindingService.createPreAuthToken(userId, deviceId);
+
+    return de.gematik.idp.gsi.server.data.PreAuthResponse.builder()
+        .preAuthToken(preAuthToken)
+        .expiresIn(deviceBindingService.getPreAuthTokenTtl())
+        .build();
+  }
+
   /* Federation App2App flow
    * Request(in)  == message nr.2 PushedAuthRequest(PAR)
    *                 messages nr.2c ... nr.2d
@@ -193,12 +248,23 @@ public class FedIdpController {
                   "urn:telematik:auth:eGK|urn:telematik:auth:eID|urn:telematik:auth:sso|urn:telematik:auth:mEW|urn:telematik:auth:guest:eGK|urn:telematik:auth:other")
           final String amr,
       @RequestParam(name = "claims", defaultValue = "") final ClaimsInfo claimsInfo,
+      @RequestParam(name = "device_id", required = false) final String deviceId,
+      @RequestParam(name = "device_type", required = false) final String deviceType,
+      @RequestParam(name = "pre_auth_token", required = false) final String preAuthToken,
       @RequestHeader(name = TLS_CLIENT_CERT_HEADER_NAME, required = false) final String clientCert,
       final HttpServletResponse respMsgNr3) {
 
     log.info(
         "App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at {}",
         serverUrlService.determineServerUrl());
+
+    // Validate pre-auth token if provided
+    String preAuthenticatedUserId = null;
+    if (preAuthToken != null && deviceId != null) {
+      preAuthenticatedUserId =
+          deviceBindingService.validateAndConsumePreAuthToken(preAuthToken, deviceId);
+      log.info("Pre-auth token validated for user: {}", preAuthenticatedUserId);
+    }
 
     RequestValidator.validateRedirectUri(fachdienstRedirectUri);
 
@@ -243,6 +309,9 @@ public class FedIdpController {
             .fachdienstRedirectUri(fachdienstRedirectUri)
             .authorizationCode(Nonce.getNonceAsHex(AUTH_CODE_LENGTH))
             .idTokenVersion(compatibleIdTokenVersion)
+            .deviceId(deviceId)
+            .deviceType(deviceType)
+            .preAuthenticatedUserId(preAuthenticatedUserId)
             .expiresAt(
                 ZonedDateTime.now().plusSeconds(gsiConfiguration.getRequestUriTTL()).toString())
             .build());
@@ -335,11 +404,35 @@ public class FedIdpController {
       @RequestParam(name = "selected_claims", required = false) final String selectedClaims,
       @RequestParam(name = "amr_value", required = false) final String amr,
       @RequestParam(name = "acr_value", required = false) final String acr,
+      @RequestParam(name = "device_id", required = false) final String deviceId,
       final HttpServletResponse respMsgNr7) {
     log.info(
         "App2App-Flow: RX message nr 6b/6d (user consent) at {}",
         serverUrlService.determineServerUrl());
     final FedIdpAuthSession session = getSessionByRequestUri(requestUri);
+
+    // Validate device binding if device info is present in session
+    if (session.getDeviceId() != null && deviceId != null) {
+      if (!session.getDeviceId().equals(deviceId)) {
+        throw new GsiException(
+            INVALID_REQUEST, "Device mismatch for session", HttpStatus.UNAUTHORIZED);
+      }
+      deviceBindingService.validateDeviceBinding(deviceId);
+    }
+
+    // Use pre-authenticated user ID if available, otherwise use provided userId
+    String validatedUserId = userId;
+    if (session.getPreAuthenticatedUserId() != null) {
+      // If session has pre-authenticated user, verify it matches the provided userId
+      if (!session.getPreAuthenticatedUserId().equals(userId)) {
+        throw new GsiException(
+            INVALID_REQUEST,
+            "User ID mismatch with pre-authenticated user",
+            HttpStatus.UNAUTHORIZED);
+      }
+      validatedUserId = session.getPreAuthenticatedUserId();
+      log.info("Using pre-authenticated user ID: {}", validatedUserId);
+    }
 
     final Set<String> selectedClaimsSet =
         getSelectedClaimsSet(
@@ -348,7 +441,8 @@ public class FedIdpController {
             session.getRequestedOptionalClaims());
 
     // bind user to session (fill user data of session)
-    authenticationService.doAuthentication(session.getUserData(), userId, selectedClaimsSet);
+    authenticationService.doAuthentication(
+        session.getUserData(), validatedUserId, selectedClaimsSet);
 
     overwriteAcrAndAmrIfSelected(acr, amr, session.getUserData());
 

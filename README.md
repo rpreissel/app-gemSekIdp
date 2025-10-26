@@ -10,6 +10,10 @@ Project **gemSekIdp-global** consists of 3 subprojects. These are:
 
   <br>
 
+## Features
+
+* Pre-Authentication and Device Binding support - see [Pre-Authentication and Device Binding Documentation](docs/PRE_AUTHENTICATION_DEVICE_BINDING.md)
+
 ### just build project
 
 To quickly check your build environment without running any tests (just build idp sektoral server

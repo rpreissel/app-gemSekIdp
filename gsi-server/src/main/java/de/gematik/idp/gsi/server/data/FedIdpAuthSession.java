@@ -53,6 +53,13 @@ public class FedIdpAuthSession {
   // IDP-Sektoral, inner session related artifacts
   private final String expiresAt;
 
+  // Device binding information
+  private final String deviceId;
+  private final String deviceType;
+
+  // Pre-authenticated user ID (if pre-auth token was used)
+  private final String preAuthenticatedUserId;
+
   @Override
   public String toString() {
     return "fachdienstClientId: "
@@ -79,6 +86,12 @@ public class FedIdpAuthSession {
         + idTokenVersion
         + "\n expiresAt: "
         + expiresAt
+        + "\n deviceId: "
+        + deviceId
+        + "\n deviceType: "
+        + deviceType
+        + "\n preAuthenticatedUserId: "
+        + preAuthenticatedUserId
         + "\n userData: "
         + userData.keySet().stream()
             .map(k -> k + userData.get(k))
