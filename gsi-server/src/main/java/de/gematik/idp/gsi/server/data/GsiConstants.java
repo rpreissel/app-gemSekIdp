@@ -91,6 +91,7 @@ public final class GsiConstants {
   public static final String FED_SIGNED_JWKS_ENDPOINT = "/jws.json";
   public static final String ASSET_LINKS_ENDPOINT_ANDROID = "/.well-known/assetlinks.json";
   public static final String ASSET_LINKS_ENDPOINT_IOS = "/.well-known/apple-app-site-association";
+  public static final String HEALTH_ENDPOINT = "/health";
   public static final String TLS_CLIENT_CERT_HEADER_NAME = "X-SSL-CERT";
   public static final String LOGO_URI =
       "https://raw.githubusercontent.com/gematik/zero-lab/main/static/images/GID_App_light_mode.svg";
