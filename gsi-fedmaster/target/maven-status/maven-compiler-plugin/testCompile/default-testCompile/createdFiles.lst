@@ -1,9 +1,0 @@
-de/gematik/idp/gsi/fedmaster/controller/FedmasterControllerEntStmntTest.class
-de/gematik/idp/gsi/fedmaster/controller/FederationApiControllerTest.class
-de/gematik/idp/gsi/fedmaster/services/EntityStatementBuilderTest.class
-de/gematik/idp/gsi/fedmaster/controller/FedmasterControllerFedListTest.class
-de/gematik/idp/gsi/fedmaster/services/FedListBuilderTest.class
-de/gematik/idp/gsi/fedmaster/common/ConfigReader.class
-de/gematik/idp/gsi/fedmaster/controller/FedmasterControllerIdpListTest.class
-de/gematik/idp/gsi/fedmaster/services/IdpListBuilderTest.class
-de/gematik/idp/gsi/fedmaster/FedMasterServerTest.class
