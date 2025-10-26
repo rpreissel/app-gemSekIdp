@@ -33,6 +33,7 @@ import static de.gematik.idp.gsi.server.data.GsiConstants.AMR_VALUES_SUBSTANTIAL
 import static de.gematik.idp.gsi.server.data.GsiConstants.AMR_VALUES_SUBSTANTIAL_V2;
 import static de.gematik.idp.gsi.server.data.GsiConstants.FEDIDP_PAR_AUTH_ENDPOINT;
 import static de.gematik.idp.gsi.server.data.GsiConstants.FED_SIGNED_JWKS_ENDPOINT;
+import static de.gematik.idp.gsi.server.data.GsiConstants.HEALTH_ENDPOINT;
 import static de.gematik.idp.gsi.server.data.GsiConstants.TLS_CLIENT_CERT_HEADER_NAME;
 import static de.gematik.idp.gsi.server.util.ClaimHelper.getClaimsForScopeSet;
 
@@ -47,6 +48,7 @@ import de.gematik.idp.gsi.server.configuration.GsiConfiguration;
 import de.gematik.idp.gsi.server.data.ClaimsInfo;
 import de.gematik.idp.gsi.server.data.ClaimsResponse;
 import de.gematik.idp.gsi.server.data.FedIdpAuthSession;
+import de.gematik.idp.gsi.server.data.HealthResponse;
 import de.gematik.idp.gsi.server.data.QRCodeGenerator;
 import de.gematik.idp.gsi.server.data.RpToken;
 import de.gematik.idp.gsi.server.exceptions.GsiException;
@@ -499,5 +501,17 @@ public class FedIdpController {
     if (selectedAmr != null) {
       userData.put(AUTHENTICATION_METHODS_REFERENCE.getJoseName(), new String[] {selectedAmr});
     }
+  }
+
+  @ResponseBody
+  @GetMapping(value = HEALTH_ENDPOINT, produces = "application/json;charset=UTF-8")
+  public HealthResponse getHealth() {
+    log.info("Health endpoint called at {}", serverUrlService.determineServerUrl());
+
+    return HealthResponse.builder()
+        .status("OK")
+        .version("8.2.0")
+        .timestamp(System.currentTimeMillis())
+        .build();
   }
 }
