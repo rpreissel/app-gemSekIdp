@@ -1,0 +1,45 @@
+{
+  "groups": [
+    {
+      "name": "fedmaster",
+      "type": "de.gematik.idp.gsi.fedmaster.configuration.FedMasterConfiguration",
+      "sourceType": "de.gematik.idp.gsi.fedmaster.configuration.FedMasterConfiguration"
+    }
+  ],
+  "properties": [
+    {
+      "name": "fedmaster.fedmaster-sig-priv-key-config",
+      "type": "de.gematik.idp.data.KeyConfig",
+      "sourceType": "de.gematik.idp.gsi.fedmaster.configuration.FedMasterConfiguration"
+    },
+    {
+      "name": "fedmaster.fedmaster-sig-pub-key-config",
+      "type": "de.gematik.idp.data.KeyConfig",
+      "sourceType": "de.gematik.idp.gsi.fedmaster.configuration.FedMasterConfiguration"
+    },
+    {
+      "name": "fedmaster.identity-provider-configs",
+      "type": "java.util.List<de.gematik.idp.gsi.fedmaster.data.IdentityProviderConfig>",
+      "sourceType": "de.gematik.idp.gsi.fedmaster.configuration.FedMasterConfiguration"
+    },
+    {
+      "name": "fedmaster.loglevel",
+      "type": "java.lang.String",
+      "sourceType": "de.gematik.idp.gsi.fedmaster.configuration.FedMasterConfiguration"
+    },
+    {
+      "name": "fedmaster.relying-party-configs",
+      "type": "java.util.List<de.gematik.idp.gsi.fedmaster.data.RelyingPartyConfig>",
+      "sourceType": "de.gematik.idp.gsi.fedmaster.configuration.FedMasterConfiguration"
+    },
+    {
+      "name": "fedmaster.server-url",
+      "type": "java.lang.String",
+      "sourceType": "de.gematik.idp.gsi.fedmaster.configuration.FedMasterConfiguration"
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}

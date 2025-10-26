@@ -1,0 +1,9 @@
+/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-fedmaster/src/test/java/de/gematik/idp/gsi/fedmaster/FedMasterServerTest.java
+/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-fedmaster/src/test/java/de/gematik/idp/gsi/fedmaster/common/ConfigReader.java
+/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-fedmaster/src/test/java/de/gematik/idp/gsi/fedmaster/controller/FederationApiControllerTest.java
+/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-fedmaster/src/test/java/de/gematik/idp/gsi/fedmaster/controller/FedmasterControllerEntStmntTest.java
+/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-fedmaster/src/test/java/de/gematik/idp/gsi/fedmaster/controller/FedmasterControllerFedListTest.java
+/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-fedmaster/src/test/java/de/gematik/idp/gsi/fedmaster/controller/FedmasterControllerIdpListTest.java
+/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-fedmaster/src/test/java/de/gematik/idp/gsi/fedmaster/services/EntityStatementBuilderTest.java
+/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-fedmaster/src/test/java/de/gematik/idp/gsi/fedmaster/services/FedListBuilderTest.java
+/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-fedmaster/src/test/java/de/gematik/idp/gsi/fedmaster/services/IdpListBuilderTest.java

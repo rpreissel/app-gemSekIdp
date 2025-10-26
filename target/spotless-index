@@ -1,0 +1,14 @@
++AiRATj2DfvmeJSRF0lvPis/sra/uRTAiVIKl6e9QBQ=
+.github/SECURITY.md 2025-10-26T06:34:57.314138132Z
+README.md 2025-10-26T06:34:57.315138131Z
+ReleaseNotes.md 2025-10-26T06:34:57.315138131Z
+gsi-fedmaster/src/main/resources/application.yml 2025-10-26T06:34:57.317138130Z
+gsi-server/src/main/resources/application.yml 2025-10-26T06:34:57.320138128Z
+gsi-testsuite/src/test/resources/features/gsiSpecificAuthentication.feature 2025-10-26T06:34:57.323138126Z
+gsi-testsuite/src/test/resources/features/idToken.feature 2025-10-26T06:34:57.324138126Z
+gsi-testsuite/src/test/resources/features/idpsektoralAuthorizationEndpoint.feature 2025-10-26T06:34:57.324138126Z
+gsi-testsuite/src/test/resources/features/idpsektoralEntityStatement.feature 2025-10-26T06:34:57.324138126Z
+gsi-testsuite/src/test/resources/features/idpsektoralPushedAuthorizationEndpoint.feature 2025-10-26T06:34:57.324138126Z
+gsi-testsuite/src/test/resources/features/idpsektoralSignedJwks.feature 2025-10-26T06:34:57.324138126Z
+gsi-testsuite/src/test/resources/features/idpsektoralTokenEndpoint.feature 2025-10-26T06:34:57.324138126Z
+gsi-testsuite/src/test/resources/features/registration.feature 2025-10-26T06:34:57.324138126Z

@@ -1,0 +1,189 @@
+<!--
+ *  Copyright 2024 gematik GmbH
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+  -->
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>GSI - landing page</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <script th:inline="javascript">
+    let essentialClaims = /*[[${essentialClaims}]]*/ [];
+    let optionalClaims = /*[[${optionalClaims}]]*/ [];
+    let idTokenVersion = /*[[${idTokenVersion}]]*/ "1.0.0";
+    let selectedClaims = essentialClaims.concat(optionalClaims)
+    document.addEventListener("DOMContentLoaded", setUp);
+
+    function setUp() {
+      const amrFromSession = /*[[${amr}]]*/ [];
+      const acrFromSession = /*[[${acr}]]*/ [];
+      let acrValueIfOnlyOne = ""
+      if (acrFromSession.length === 1) {
+        acrValueIfOnlyOne = acrFromSession[0].split("-")[3]
+        document.getElementById(acrValueIfOnlyOne).checked = true
+        idTokenVersion === "1.0.0" ? setAmrOptions(acrFromSession[0]) : setAmrOptionsForV2(
+            acrFromSession[0]);
+      }
+      if (amrFromSession.length === 1) {
+        if (idTokenVersion === "1.0.0") {
+          if (amrFromSession[0].includes("mEW") && (acrValueIfOnlyOne === "substantial"
+              || acrValueIfOnlyOne === "")) {
+            document.getElementById("substantial").checked = true
+            setAmrOptions("gematik-ehealth-loa-substantial")
+            document.getElementById("amr-select").value = amrFromSession[0]
+            setAmrValue()
+          } else if (!amrFromSession[0].includes("mEW") && (acrValueIfOnlyOne === "high"
+              || acrValueIfOnlyOne === "")) {
+            document.getElementById("high").checked = true
+            setAmrOptions("gematik-ehealth-loa-high")
+            document.getElementById("amr-select").value = amrFromSession[0]
+            setAmrValue()
+          }
+        } else {
+          setAmrOptionsForV2(acrValueIfOnlyOne === "substantial" ? "gematik-ehealth-loa-substantial"
+              : "gematik-ehealth-loa-high");
+          document.getElementById("amr-select").value = amrFromSession[0]
+          setAmrValue()
+        }
+      }
+    }
+
+    function submitForm(){
+      let kvnrValue = document.getElementById("kvnr").value.trim();
+      document.getElementById("userid").value = kvnrValue !== "" ? kvnrValue : "X110411675";
+
+      document.getElementById("acrValue").value = (document.getElementById("acrValue").value === "") ? "gematik-ehealth-loa-high" : document.getElementById("acrValue").value
+      document.getElementById("amrValue").value = (document.getElementById("amrValue").value === "") ? "urn:telematik:auth:eGK" : document.getElementById("amrValue").value
+        if(selectedClaims.length > 0){
+            document.getElementById("selectedClaims").disabled = false;
+            document.getElementById("selectedClaims").value = selectedClaims.join(" ")
+        }
+
+    }
+
+    function setAmrOptions(acr){
+      if (idTokenVersion === "1.0.0"){
+        setAmrOptionsForV1(acr);
+      } else {
+        setAmrOptionsForV2(acr);
+      }
+    }
+
+    function setAmrOptionsForV2(acr) {
+      document.getElementById("acrValue").value = acr
+      let amrValues = ["urn:telematik:auth:other", "urn:telematik:auth:eGK", "urn:telematik:auth:eID", "urn:telematik:auth:guest:eGK"]
+      let amrSelectElement = document.getElementById("amr-select")
+      while (amrSelectElement.lastChild) {
+        if (amrSelectElement.children.length === 1) break
+        amrSelectElement.removeChild(amrSelectElement.lastChild);
+      }
+      if (acr === "gematik-ehealth-loa-substantial") {
+        addAmrOption(amrValues[0], amrSelectElement)
+      } else if (acr === "gematik-ehealth-loa-high" || "") {
+        amrValues.forEach(amrValue => {
+          addAmrOption(amrValue, amrSelectElement)
+        })
+      }
+    }
+
+    function setAmrOptionsForV1(acr){
+      document.getElementById("acrValue").value = acr
+      let amrValues = ["urn:telematik:auth:mEW", "urn:telematik:auth:eGK", "urn:telematik:auth:eID", "urn:telematik:auth:sso", "urn:telematik:auth:guest:eGK", "urn:telematik:auth:other"]
+      let amrSelectElement = document.getElementById("amr-select")
+      while (amrSelectElement.lastChild) {
+        if(amrSelectElement.children.length === 1) break
+        amrSelectElement.removeChild(amrSelectElement.lastChild);
+      }
+      if(acr === "gematik-ehealth-loa-substantial"){
+        addAmrOption(amrValues[0], amrSelectElement)
+      } else if (acr === "gematik-ehealth-loa-high"){
+        for(let i = 1; i < amrValues.length; i++){
+          addAmrOption(amrValues[i], amrSelectElement)
+        }
+      }
+    }
+
+    function addAmrOption(optionValue, amrSelectElement){
+      let amrOption = document.createElement("option")
+      amrOption.value = optionValue
+      amrOption.text = optionValue
+      amrSelectElement.add(amrOption)
+    }
+
+    function setAmrValue() {
+      document.getElementById("amrValue").value = document.getElementById("amr-select").value;
+    }
+
+    function setClaim(claim){
+        let claimTrimmed = claim.replace(/^"|"$/g, '');
+      if(selectedClaims.includes(claimTrimmed)){
+          let index = selectedClaims.indexOf(claimTrimmed);
+        selectedClaims.splice(index, 1)
+      }else {
+        selectedClaims.push(claimTrimmed)
+      }
+
+    }
+  </script>
+</head>
+<body>
+<h1>gematik IDP Authenication Page (Test only)</h1>
+<body>
+<p style="color:red;">This is just a test implementation for a web-based authentication with the gematik IDP. All you have to do in order to continue with the flow is to click the "Submit TAN Button". Scanning the QR-Code or even entering a TAN is not needed.</p>
+</body>
+<p th:utext="'Relying party (Fachdienst) <b>' + ${clientId} + '</b> requires authentication!'"/>
+<p>If you have not installed the GSIA app yet go to the app store.</p>
+<img th:src="@{/images/qrCodeGSIA.jpg}" alt="QR Code" title="Authenticator App"><br>
+
+<p>Scan image below with your mobile device. The GSIA app will start and guide you through the authentication procedure. When it is completed, you will receive a TAN.</p>
+<img th:src="${dynamicImageDataUri}" alt="Dynamic Image"> </p>
+<label for="kvnr">KVNR</label>
+<input type="text" id="kvnr" placeholder="Enter your KVNR here" th:value="X110411675"><br>
+<br>
+<label for="tan">gematik authenticator TAN</label>
+<input type="text" id="tan" placeholder="Enter received TAN here"><br>
+<br><br>
+<label><b>Authentication Class Reference</b></label><br>
+<label for="high">gematik-ehealth-loa-high</label>
+<input type="radio" id="high" name="acr" th:value="gematik-ehealth-loa-high" onchange="setAmrOptions('gematik-ehealth-loa-high')">
+<label for="substantial">gematik-ehealth-loa-substantial</label>
+<input type="radio" id="substantial" name="acr" th:value="gematik-ehealth-loa-substantial" onchange="setAmrOptions('gematik-ehealth-loa-substantial')">
+<br><br>
+<label for="amr-select"><b>Authentication Method Reference</b></label><br>
+<select id="amr-select" onchange="setAmrValue()">
+<option disabled selected>Select Value</option>
+</select>
+<br><br>
+<label><b>Claims</b></label>
+<p th:each="claim : ${essentialClaims}">
+  <input type="checkbox" th:id="${claim}" th:value="${claim}" checked disabled>
+  <label th:for="${claim}" th:text="${claim}"></label>
+</p>
+<p th:each="claim : ${optionalClaims}">
+  <input type="checkbox" th:id="${claim}" th:value="${claim}" checked th:onchange="setClaim('[[${claim}]]')">
+  <label th:for="${claim}" th:text="${claim}"></label>
+</p>
+<form th:action="${fedAuthEndpointUrl}" onsubmit="submitForm()">
+  <br>
+  <input type="hidden" id="requesturi" name="request_uri" th:value="${requestUri}">
+  <input type="hidden" id="userid" name="user_id">
+  <input type="hidden" id="amrValue" name="amr_value">
+  <input type="hidden" id="acrValue" name="acr_value">
+  <input type="hidden" id="selectedClaims" name="selected_claims" disabled>
+  <br>
+  <input type="submit" value="Login">
+</form>
+</body>
+</html>
