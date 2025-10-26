@@ -56,5 +56,6 @@ class HealthEndpointTest {
     assertThat(healthResponse.getStatus()).isEqualTo("OK");
     assertThat(healthResponse.getVersion()).isEqualTo("8.2.0");
     assertThat(healthResponse.getTimestamp()).isGreaterThan(0);
+    assertThat(healthResponse.getRequestCount()).isGreaterThan(0);
   }
 }

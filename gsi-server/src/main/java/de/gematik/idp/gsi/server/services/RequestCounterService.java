@@ -18,23 +18,21 @@
  * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
  */
 
-package de.gematik.idp.gsi.server.data;
+package de.gematik.idp.gsi.server.services;
 
-import com.fasterxml.jackson.databind.PropertyNamingStrategies;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.util.concurrent.atomic.AtomicLong;
+import org.springframework.stereotype.Service;
 
-@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-@Builder
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class HealthResponse {
-  private String status;
-  private String version;
-  private long timestamp;
-  private long requestCount;
+@Service
+public class RequestCounterService {
+
+  private final AtomicLong requestCount = new AtomicLong(0);
+
+  public void incrementRequestCount() {
+    requestCount.incrementAndGet();
+  }
+
+  public long getRequestCount() {
+    return requestCount.get();
+  }
 }

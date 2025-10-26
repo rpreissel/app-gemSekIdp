@@ -55,6 +55,7 @@ import de.gematik.idp.gsi.server.exceptions.GsiException;
 import de.gematik.idp.gsi.server.services.AuthenticationService;
 import de.gematik.idp.gsi.server.services.EntityStatementBuilder;
 import de.gematik.idp.gsi.server.services.JwksBuilder;
+import de.gematik.idp.gsi.server.services.RequestCounterService;
 import de.gematik.idp.gsi.server.services.RequestValidator;
 import de.gematik.idp.gsi.server.services.SektoralIdpAuthenticator;
 import de.gematik.idp.gsi.server.services.ServerUrlService;
@@ -116,6 +117,7 @@ public class FedIdpController {
   private final ObjectMapper objectMapper;
   private final GsiConfiguration gsiConfiguration;
   private final JwksBuilder jwksBuilder;
+  private final RequestCounterService requestCounterService;
 
   @Autowired FederationPrivKey esSigPrivKey;
   @Autowired FederationPrivKey tokenSigPrivKey;
@@ -512,6 +514,7 @@ public class FedIdpController {
         .status("OK")
         .version("8.2.0")
         .timestamp(System.currentTimeMillis())
+        .requestCount(requestCounterService.getRequestCount())
         .build();
   }
 }

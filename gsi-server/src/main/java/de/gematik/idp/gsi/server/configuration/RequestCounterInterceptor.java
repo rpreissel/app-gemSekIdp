@@ -18,23 +18,25 @@
  * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
  */
 
-package de.gematik.idp.gsi.server.data;
+package de.gematik.idp.gsi.server.configuration;
 
-import com.fasterxml.jackson.databind.PropertyNamingStrategies;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import de.gematik.idp.gsi.server.services.RequestCounterService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.HandlerInterceptor;
 
-@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-@Builder
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class HealthResponse {
-  private String status;
-  private String version;
-  private long timestamp;
-  private long requestCount;
+@Component
+@RequiredArgsConstructor
+public class RequestCounterInterceptor implements HandlerInterceptor {
+
+  private final RequestCounterService requestCounterService;
+
+  @Override
+  public boolean preHandle(
+      final HttpServletRequest request, final HttpServletResponse response, final Object handler) {
+    requestCounterService.incrementRequestCount();
+    return true;
+  }
 }
