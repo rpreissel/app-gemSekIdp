@@ -250,12 +250,21 @@ public class FedIdpController {
       @RequestParam(name = "claims", defaultValue = "") final ClaimsInfo claimsInfo,
       @RequestParam(name = "device_id", required = false) final String deviceId,
       @RequestParam(name = "device_type", required = false) final String deviceType,
+      @RequestParam(name = "pre_auth_token", required = false) final String preAuthToken,
       @RequestHeader(name = TLS_CLIENT_CERT_HEADER_NAME, required = false) final String clientCert,
       final HttpServletResponse respMsgNr3) {
 
     log.info(
         "App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at {}",
         serverUrlService.determineServerUrl());
+
+    // Validate pre-auth token if provided
+    String preAuthenticatedUserId = null;
+    if (preAuthToken != null && deviceId != null) {
+      preAuthenticatedUserId =
+          deviceBindingService.validateAndConsumePreAuthToken(preAuthToken, deviceId);
+      log.info("Pre-auth token validated for user: {}", preAuthenticatedUserId);
+    }
 
     RequestValidator.validateRedirectUri(fachdienstRedirectUri);
 
@@ -302,6 +311,7 @@ public class FedIdpController {
             .idTokenVersion(compatibleIdTokenVersion)
             .deviceId(deviceId)
             .deviceType(deviceType)
+            .preAuthenticatedUserId(preAuthenticatedUserId)
             .expiresAt(
                 ZonedDateTime.now().plusSeconds(gsiConfiguration.getRequestUriTTL()).toString())
             .build());
@@ -394,7 +404,6 @@ public class FedIdpController {
       @RequestParam(name = "selected_claims", required = false) final String selectedClaims,
       @RequestParam(name = "amr_value", required = false) final String amr,
       @RequestParam(name = "acr_value", required = false) final String acr,
-      @RequestParam(name = "pre_auth_token", required = false) final String preAuthToken,
       @RequestParam(name = "device_id", required = false) final String deviceId,
       final HttpServletResponse respMsgNr7) {
     log.info(
@@ -411,15 +420,18 @@ public class FedIdpController {
       deviceBindingService.validateDeviceBinding(deviceId);
     }
 
-    // Validate pre-auth token if provided
+    // Use pre-authenticated user ID if available, otherwise use provided userId
     String validatedUserId = userId;
-    if (preAuthToken != null && deviceId != null) {
-      validatedUserId = deviceBindingService.validateAndConsumePreAuthToken(preAuthToken, deviceId);
-      // Ensure the provided userId matches the pre-authenticated userId
-      if (!validatedUserId.equals(userId)) {
+    if (session.getPreAuthenticatedUserId() != null) {
+      // If session has pre-authenticated user, verify it matches the provided userId
+      if (!session.getPreAuthenticatedUserId().equals(userId)) {
         throw new GsiException(
-            INVALID_REQUEST, "User ID mismatch with pre-auth token", HttpStatus.UNAUTHORIZED);
+            INVALID_REQUEST,
+            "User ID mismatch with pre-authenticated user",
+            HttpStatus.UNAUTHORIZED);
       }
+      validatedUserId = session.getPreAuthenticatedUserId();
+      log.info("Using pre-authenticated user ID: {}", validatedUserId);
     }
 
     final Set<String> selectedClaimsSet =

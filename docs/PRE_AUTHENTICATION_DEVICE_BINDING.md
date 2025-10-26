@@ -85,13 +85,14 @@ curl -X POST http://localhost:8085/pre-auth \
 
 #### Pushed Authorization Request (PAR)
 
-The PAR endpoint now supports optional device binding parameters:
+The PAR endpoint now supports optional device binding and pre-authentication:
 
 **Additional Parameters:**
 - `device_id` (optional): Device identifier for session binding
 - `device_type` (optional): Device type
+- `pre_auth_token` (optional): Pre-authentication token from `/pre-auth` endpoint
 
-**Example:**
+**Example with Pre-Authentication:**
 ```bash
 curl -X POST http://localhost:8085/PAR_Auth \
   -H "Content-Type: application/x-www-form-urlencoded" \
@@ -105,20 +106,22 @@ curl -X POST http://localhost:8085/PAR_Auth \
   -d "scope=openid" \
   -d "acr_values=gematik-ehealth-loa-high" \
   -d "device_id=unique-device-123" \
-  -d "device_type=android"
+  -d "device_type=android" \
+  -d "pre_auth_token=8e22d4f759a3d03315b05155b76862d1..."
 ```
+
+**Note:** When a pre-auth token is provided at the PAR endpoint, the user ID is extracted from the token, validated, and stored in the session. The authorization endpoint will then verify that the provided user_id matches the pre-authenticated user.
 
 #### Authorization Endpoint
 
-The authorization endpoint now supports pre-authentication:
+The authorization endpoint validates the device binding and pre-authenticated user:
 
 **Additional Parameters:**
-- `pre_auth_token` (optional): Pre-authentication token obtained from `/pre-auth`
 - `device_id` (optional): Device identifier for validation
 
 **Example:**
 ```bash
-curl -X GET "http://localhost:8085/auth?request_uri=urn:...&user_id=X110411675&pre_auth_token=8e22d4f759a3d03315b05155b76862d1...&device_id=unique-device-123"
+curl -X GET "http://localhost:8085/auth?request_uri=urn:...&user_id=X110411675&device_id=unique-device-123"
 ```
 
 ## Usage Flows
@@ -158,16 +161,19 @@ curl -X GET "http://localhost:8085/auth?request_uri=urn:...&user_id=X110411675&p
    → Returns: preAuthToken (valid for 600 seconds)
    ```
 
-3. **Initiate PAR with Device Binding:**
+3. **Initiate PAR with Pre-Auth Token:**
    ```
    POST /PAR_Auth
    → ... standard PAR params ...
    → device_id, device_type
+   → pre_auth_token
+   (Token is validated here and user_id is extracted and stored in session)
    ```
 
-4. **Complete Authorization with Pre-Auth Token:**
+4. **Complete Authorization:**
    ```
-   GET /auth?request_uri=...&user_id=...&pre_auth_token=...&device_id=...
+   GET /auth?request_uri=...&user_id=...&device_id=...
+   (User ID must match the pre-authenticated user from PAR)
    ```
 
 ## Security Features
