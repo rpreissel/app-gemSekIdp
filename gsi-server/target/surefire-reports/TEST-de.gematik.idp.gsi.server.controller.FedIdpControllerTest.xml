@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="14.988" tests="56" errors="0" skipped="1" failures="1">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="skip.inttests" value="true"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-server/target/test-classes:/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-server/target/classes:/home/runner/.m2/repository/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/3.5.4/spring-boot-starter-actuator-3.5.4.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-starter/3.5.4/spring-boot-starter-3.5.4.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot/3.5.4/spring-boot-3.5.4.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.4/spring-boot-autoconfigure-3.5.4.jar:/home/runner/.m2/repository/org/yaml/snakeyaml/2.4/snakeyaml-2.4.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-actuator-autoconfigure/3.5.4/spring-boot-actuator-autoconfigure-3.5.4.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-actuator/3.5.4/spring-boot-actuator-3.5.4.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.2/jackson-databind-2.19.2.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.2/jackson-core-2.19.2.jar:/home/runner/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.19.2/jackson-datatype-jsr310-2.19.2.jar:/home/runner/.m2/repository/io/micrometer/micrometer-observation/1.15.2/micrometer-observation-1.15.2.jar:/home/runner/.m2/repository/io/micrometer/micrometer-commons/1.15.2/micrometer-commons-1.15.2.jar:/home/runner/.m2/repository/io/micrometer/micrometer-jakarta9/1.15.2/micrometer-jakarta9-1.15.2.jar:/home/runner/.m2/repository/io/micrometer/micrometer-core/1.15.2/micrometer-core-1.15.2.jar:/home/runner/.m2/repository/org/hdrhistogram/HdrHistogram/2.2.2/HdrHistogram-2.2.2.jar:/home/runner/.m2/repository/org/latencyutils/LatencyUtils/2.0.3/LatencyUtils-2.0.3.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.5.4/spring-boot-starter-validation-3.5.4.jar:/home/runner/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.43/tomcat-embed-el-10.1.43.jar:/home/runner/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.2.Final/hibernate-validator-8.0.2.Final.jar:/home/runner/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/home/runner/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.5.4/spring-boot-starter-test-3.5.4.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-test/3.5.4/spring-boot-test-3.5.4.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.5.4/spring-boot-test-autoconfigure-3.5.4.jar:/home/runner/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/home/runner/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/home/runner/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/home/runner/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/home/runner/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/home/runner/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/home/runner/.m2/repository/org/assertj/assertj-core/3.27.3/assertj-core-3.27.3.jar:/home/runner/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/home/runner/.m2/repository/org/hamcrest/hamcrest/3.0/hamcrest-3.0.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter/5.12.2/junit-jupiter-5.12.2.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.12.2/junit-jupiter-api-5.12.2.jar:/home/runner/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-commons/1.12.2/junit-platform-commons-1.12.2.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.12.2/junit-jupiter-params-5.12.2.jar:/home/runner/.m2/repository/org/mockito/mockito-junit-jupiter/5.17.0/mockito-junit-jupiter-5.17.0.jar:/home/runner/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/home/runner/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/runner/.m2/repository/org/springframework/spring-core/6.2.9/spring-core-6.2.9.jar:/home/runner/.m2/repository/org/springframework/spring-jcl/6.2.9/spring-jcl-6.2.9.jar:/home/runner/.m2/repository/org/springframework/spring-test/6.2.9/spring-test-6.2.9.jar:/home/runner/.m2/repository/org/xmlunit/xmlunit-core/2.10.3/xmlunit-core-2.10.3.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-starter-thymeleaf/3.5.4/spring-boot-starter-thymeleaf-3.5.4.jar:/home/runner/.m2/repository/org/thymeleaf/thymeleaf-spring6/3.1.3.RELEASE/thymeleaf-spring6-3.1.3.RELEASE.jar:/home/runner/.m2/repository/org/thymeleaf/thymeleaf/3.1.3.RELEASE/thymeleaf-3.1.3.RELEASE.jar:/home/runner/.m2/repository/org/attoparser/attoparser/2.0.7.RELEASE/attoparser-2.0.7.RELEASE.jar:/home/runner/.m2/repository/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.5.4/spring-boot-starter-web-3.5.4.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.5.4/spring-boot-starter-json-3.5.4.jar:/home/runner/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.19.2/jackson-datatype-jdk8-2.19.2.jar:/home/runner/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.19.2/jackson-module-parameter-names-2.19.2.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.5.4/spring-boot-starter-tomcat-3.5.4.jar:/home/runner/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.43/tomcat-embed-core-10.1.43.jar:/home/runner/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.43/tomcat-embed-websocket-10.1.43.jar:/home/runner/.m2/repository/org/springframework/spring-web/6.2.9/spring-web-6.2.9.jar:/home/runner/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.8.9/springdoc-openapi-starter-webmvc-ui-2.8.9.jar:/home/runner/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.8.9/springdoc-openapi-starter-webmvc-api-2.8.9.jar:/home/runner/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.8.9/springdoc-openapi-starter-common-2.8.9.jar:/home/runner/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.30/swagger-core-jakarta-2.2.30.jar:/home/runner/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.30/swagger-annotations-jakarta-2.2.30.jar:/home/runner/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.30/swagger-models-jakarta-2.2.30.jar:/home/runner/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.19.2/jackson-dataformat-yaml-2.19.2.jar:/home/runner/.m2/repository/org/webjars/swagger-ui/5.21.0/swagger-ui-5.21.0.jar:/home/runner/.m2/repository/org/webjars/webjars-locator-lite/1.1.0/webjars-locator-lite-1.1.0.jar:/home/runner/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/runner/.m2/repository/org/mockito/mockito-core/5.19.0/mockito-core-5.19.0.jar:/home/runner/.m2/repository/net/bytebuddy/byte-buddy/1.17.6/byte-buddy-1.17.6.jar:/home/runner/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.6/byte-buddy-agent-1.17.6.jar:/home/runner/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/runner/.m2/repository/org/mock-server/mockserver-spring-test-listener/5.15.0/mockserver-spring-test-listener-5.15.0.jar:/home/runner/.m2/repository/org/mock-server/mockserver-netty/5.15.0/mockserver-netty-5.15.0.jar:/home/runner/.m2/repository/org/mock-server/mockserver-client-java/5.15.0/mockserver-client-java-5.15.0.jar:/home/runner/.m2/repository/org/mock-server/mockserver-core/5.15.0/mockserver-core-5.15.0.jar:/home/runner/.m2/repository/com/lmax/disruptor/3.4.4/disruptor-3.4.4.jar:/home/runner/.m2/repository/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar:/home/runner/.m2/repository/io/netty/netty-codec-socks/4.1.123.Final/netty-codec-socks-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-handler-proxy/4.1.123.Final/netty-handler-proxy-4.1.123.Final.jar:/home/runner/.m2/repository/com/jcraft/jzlib/1.1.3/jzlib-1.1.3.jar:/home/runner/.m2/repository/com/fasterxml/uuid/java-uuid-generator/4.1.0/java-uuid-generator-4.1.0.jar:/home/runner/.m2/repository/com/nimbusds/nimbus-jose-jwt/9.28/nimbus-jose-jwt-9.28.jar:/home/runner/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar:/home/runner/.m2/repository/org/apache/velocity/velocity-engine-scripting/2.3/velocity-engine-scripting-2.3.jar:/home/runner/.m2/repository/org/apache/velocity/velocity-engine-core/2.3/velocity-engine-core-2.3.jar:/home/runner/.m2/repository/org/apache/velocity/tools/velocity-tools-generic/3.1/velocity-tools-generic-3.1.jar:/home/runner/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/home/runner/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/runner/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/home/runner/.m2/repository/org/apache/commons/commons-digester3/3.2/commons-digester3-3.2.jar:/home/runner/.m2/repository/com/github/cliftonlabs/json-simple/3.0.2/json-simple-3.0.2.jar:/home/runner/.m2/repository/com/samskivert/jmustache/1.16/jmustache-1.16.jar:/home/runner/.m2/repository/net/javacrumbs/json-unit/json-unit-core/2.36.0/json-unit-core-2.36.0.jar:/home/runner/.m2/repository/org/hamcrest/hamcrest-core/3.0/hamcrest-core-3.0.jar:/home/runner/.m2/repository/com/networknt/json-schema-validator/1.0.76/json-schema-validator-1.0.76.jar:/home/runner/.m2/repository/com/ethlo/time/itu/1.7.0/itu-1.7.0.jar:/home/runner/.m2/repository/io/swagger/parser/v3/swagger-parser/2.1.10/swagger-parser-2.1.10.jar:/home/runner/.m2/repository/io/swagger/parser/v3/swagger-parser-v2-converter/2.1.10/swagger-parser-v2-converter-2.1.10.jar:/home/runner/.m2/repository/io/swagger/swagger-core/1.6.9/swagger-core-1.6.9.jar:/home/runner/.m2/repository/io/swagger/swagger-models/1.6.9/swagger-models-1.6.9.jar:/home/runner/.m2/repository/io/swagger/swagger-annotations/1.6.9/swagger-annotations-1.6.9.jar:/home/runner/.m2/repository/io/swagger/swagger-parser/1.0.64/swagger-parser-1.0.64.jar:/home/runner/.m2/repository/io/swagger/swagger-compat-spec-parser/1.0.64/swagger-compat-spec-parser-1.0.64.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-schema-validator/2.2.14/json-schema-validator-2.2.14.jar:/home/runner/.m2/repository/com/github/java-json-tools/jackson-coreutils-equivalence/1.0/jackson-coreutils-equivalence-1.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-schema-core/1.2.14/json-schema-core-1.2.14.jar:/home/runner/.m2/repository/com/github/java-json-tools/uri-template/0.10/uri-template-0.10.jar:/home/runner/.m2/repository/org/mozilla/rhino/1.7.7.2/rhino-1.7.7.2.jar:/home/runner/.m2/repository/com/sun/mail/mailapi/1.6.2/mailapi-1.6.2.jar:/home/runner/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/home/runner/.m2/repository/com/googlecode/libphonenumber/libphonenumber/8.11.1/libphonenumber-8.11.1.jar:/home/runner/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-patch/1.13/json-patch-1.13.jar:/home/runner/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/home/runner/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/home/runner/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/runner/.m2/repository/io/swagger/core/v3/swagger-models/2.2.8/swagger-models-2.2.8.jar:/home/runner/.m2/repository/io/swagger/parser/v3/swagger-parser-core/2.1.10/swagger-parser-core-2.1.10.jar:/home/runner/.m2/repository/io/swagger/parser/v3/swagger-parser-v3/2.1.10/swagger-parser-v3-2.1.10.jar:/home/runner/.m2/repository/io/swagger/core/v3/swagger-core/2.2.8/swagger-core-2.2.8.jar:/home/runner/.m2/repository/io/swagger/core/v3/swagger-annotations/2.2.8/swagger-annotations-2.2.8.jar:/home/runner/.m2/repository/com/sun/xml/bind/jaxb-impl/4.0.5/jaxb-impl-4.0.5.jar:/home/runner/.m2/repository/com/sun/xml/bind/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/home/runner/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/home/runner/.m2/repository/org/xmlunit/xmlunit-placeholders/2.10.3/xmlunit-placeholders-2.10.3.jar:/home/runner/.m2/repository/org/apache/commons/commons-text/1.10.0/commons-text-1.10.0.jar:/home/runner/.m2/repository/io/github/classgraph/classgraph/4.8.154/classgraph-4.8.154.jar:/home/runner/.m2/repository/io/prometheus/simpleclient/0.16.0/simpleclient-0.16.0.jar:/home/runner/.m2/repository/io/prometheus/simpleclient_tracer_otel/0.16.0/simpleclient_tracer_otel-0.16.0.jar:/home/runner/.m2/repository/io/prometheus/simpleclient_tracer_common/0.16.0/simpleclient_tracer_common-0.16.0.jar:/home/runner/.m2/repository/io/prometheus/simpleclient_tracer_otel_agent/0.16.0/simpleclient_tracer_otel_agent-0.16.0.jar:/home/runner/.m2/repository/io/prometheus/simpleclient_httpserver/0.16.0/simpleclient_httpserver-0.16.0.jar:/home/runner/.m2/repository/io/prometheus/simpleclient_common/0.16.0/simpleclient_common-0.16.0.jar:/home/runner/.m2/repository/io/netty/netty-buffer/4.1.123.Final/netty-buffer-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-codec/4.1.123.Final/netty-codec-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-codec-http/4.1.123.Final/netty-codec-http-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-codec-http2/4.1.123.Final/netty-codec-http2-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-common/4.1.123.Final/netty-common-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-handler/4.1.123.Final/netty-handler-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-resolver/4.1.123.Final/netty-resolver-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.123.Final/netty-transport-native-unix-common-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-transport/4.1.123.Final/netty-transport-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.72.Final/netty-tcnative-boringssl-static-2.0.72.Final.jar:/home/runner/.m2/repository/io/netty/netty-tcnative-classes/2.0.72.Final/netty-tcnative-classes-2.0.72.Final.jar:/home/runner/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.72.Final/netty-tcnative-boringssl-static-2.0.72.Final-linux-x86_64.jar:/home/runner/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.72.Final/netty-tcnative-boringssl-static-2.0.72.Final-linux-aarch_64.jar:/home/runner/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.72.Final/netty-tcnative-boringssl-static-2.0.72.Final-osx-x86_64.jar:/home/runner/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.72.Final/netty-tcnative-boringssl-static-2.0.72.Final-osx-aarch_64.jar:/home/runner/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.72.Final/netty-tcnative-boringssl-static-2.0.72.Final-windows-x86_64.jar:/home/runner/.m2/repository/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar:/home/runner/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/runner/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/runner/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/runner/.m2/repository/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar:/home/runner/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/home/runner/.m2/repository/org/springframework/spring-beans/6.2.9/spring-beans-6.2.9.jar:/home/runner/.m2/repository/org/springframework/spring-context/6.2.9/spring-context-6.2.9.jar:/home/runner/.m2/repository/de/gematik/idp/idp-commons/29.3.2/idp-commons-29.3.2.jar:/home/runner/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/4.0.0/jakarta.ws.rs-api-4.0.0.jar:/home/runner/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.2/jackson-annotations-2.19.2.jar:/home/runner/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/home/runner/.m2/repository/de/gematik/idp/idp-crypto/29.3.2/idp-crypto-29.3.2.jar:/home/runner/.m2/repository/org/bouncycastle/bcpkix-jdk18on/1.81/bcpkix-jdk18on-1.81.jar:/home/runner/.m2/repository/org/bouncycastle/bcutil-jdk18on/1.81/bcutil-jdk18on-1.81.jar:/home/runner/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.81/bcprov-jdk18on-1.81.jar:/home/runner/.m2/repository/org/bitbucket/b_c/jose4j/0.9.6/jose4j-0.9.6.jar:/home/runner/.m2/repository/commons-codec/commons-codec/1.18.0/commons-codec-1.18.0.jar:/home/runner/.m2/repository/com/konghq/unirest-objectmapper-jackson/4.2.9/unirest-objectmapper-jackson-4.2.9.jar:/home/runner/.m2/repository/de/gematik/idp/idp-test/29.3.2/idp-test-29.3.2.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.12.2/junit-jupiter-engine-5.12.2.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-engine/1.12.2/junit-platform-engine-1.12.2.jar:/home/runner/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/runner/.m2/repository/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar:/home/runner/.m2/repository/org/springframework/spring-webmvc/6.2.9/spring-webmvc-6.2.9.jar:/home/runner/.m2/repository/org/springframework/spring-aop/6.2.9/spring-aop-6.2.9.jar:/home/runner/.m2/repository/org/springframework/spring-expression/6.2.9/spring-expression-6.2.9.jar:/home/runner/.m2/repository/com/konghq/unirest-java-core/4.5.0/unirest-java-core-4.5.0.jar:/home/runner/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.3.4/httpcore5-5.3.4.jar:/home/runner/.m2/repository/com/google/code/gson/gson/2.13.1/gson-2.13.1.jar:/home/runner/.m2/repository/com/google/errorprone/error_prone_annotations/2.38.0/error_prone_annotations-2.38.0.jar:/home/runner/.m2/repository/jakarta/validation/jakarta.validation-api/3.1.1/jakarta.validation-api-3.1.1.jar:/home/runner/.m2/repository/jakarta/annotation/jakarta.annotation-api/3.0.0/jakarta.annotation-api-3.0.0.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-slf4j2-impl/2.24.3/log4j-slf4j2-impl-2.24.3.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-api/2.25.1/log4j-api-2.25.1.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-core/2.25.1/log4j-core-2.25.1.jar:/home/runner/.m2/repository/com/google/zxing/core/3.5.3/core-3.5.3.jar:/home/runner/.m2/repository/com/google/zxing/javase/3.5.3/javase-3.5.3.jar:/home/runner/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/home/runner/.m2/repository/com/github/jai-imageio/jai-imageio-core/1.4.0/jai-imageio-core-1.4.0.jar:/home/runner/.m2/repository/org/mockito/mockito-inline/5.2.0/mockito-inline-5.2.0.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="catalina.useNaming" value="false"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/temurin-21-jdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-server/target/surefire/surefirebooter-20251026060813837_3.jar /home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-server/target/surefire 2025-10-26T06-08-12_873-jvmRun1 surefire-20251026060813837_1tmp surefire_0-20251026060813837_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-server/target/test-classes:/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-server/target/classes:/home/runner/.m2/repository/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/3.5.4/spring-boot-starter-actuator-3.5.4.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-starter/3.5.4/spring-boot-starter-3.5.4.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot/3.5.4/spring-boot-3.5.4.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.4/spring-boot-autoconfigure-3.5.4.jar:/home/runner/.m2/repository/org/yaml/snakeyaml/2.4/snakeyaml-2.4.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-actuator-autoconfigure/3.5.4/spring-boot-actuator-autoconfigure-3.5.4.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-actuator/3.5.4/spring-boot-actuator-3.5.4.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.2/jackson-databind-2.19.2.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.2/jackson-core-2.19.2.jar:/home/runner/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.19.2/jackson-datatype-jsr310-2.19.2.jar:/home/runner/.m2/repository/io/micrometer/micrometer-observation/1.15.2/micrometer-observation-1.15.2.jar:/home/runner/.m2/repository/io/micrometer/micrometer-commons/1.15.2/micrometer-commons-1.15.2.jar:/home/runner/.m2/repository/io/micrometer/micrometer-jakarta9/1.15.2/micrometer-jakarta9-1.15.2.jar:/home/runner/.m2/repository/io/micrometer/micrometer-core/1.15.2/micrometer-core-1.15.2.jar:/home/runner/.m2/repository/org/hdrhistogram/HdrHistogram/2.2.2/HdrHistogram-2.2.2.jar:/home/runner/.m2/repository/org/latencyutils/LatencyUtils/2.0.3/LatencyUtils-2.0.3.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.5.4/spring-boot-starter-validation-3.5.4.jar:/home/runner/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.43/tomcat-embed-el-10.1.43.jar:/home/runner/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.2.Final/hibernate-validator-8.0.2.Final.jar:/home/runner/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/home/runner/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.5.4/spring-boot-starter-test-3.5.4.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-test/3.5.4/spring-boot-test-3.5.4.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.5.4/spring-boot-test-autoconfigure-3.5.4.jar:/home/runner/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/home/runner/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/home/runner/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/home/runner/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/home/runner/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/home/runner/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/home/runner/.m2/repository/org/assertj/assertj-core/3.27.3/assertj-core-3.27.3.jar:/home/runner/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/home/runner/.m2/repository/org/hamcrest/hamcrest/3.0/hamcrest-3.0.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter/5.12.2/junit-jupiter-5.12.2.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.12.2/junit-jupiter-api-5.12.2.jar:/home/runner/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-commons/1.12.2/junit-platform-commons-1.12.2.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.12.2/junit-jupiter-params-5.12.2.jar:/home/runner/.m2/repository/org/mockito/mockito-junit-jupiter/5.17.0/mockito-junit-jupiter-5.17.0.jar:/home/runner/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/home/runner/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/runner/.m2/repository/org/springframework/spring-core/6.2.9/spring-core-6.2.9.jar:/home/runner/.m2/repository/org/springframework/spring-jcl/6.2.9/spring-jcl-6.2.9.jar:/home/runner/.m2/repository/org/springframework/spring-test/6.2.9/spring-test-6.2.9.jar:/home/runner/.m2/repository/org/xmlunit/xmlunit-core/2.10.3/xmlunit-core-2.10.3.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-starter-thymeleaf/3.5.4/spring-boot-starter-thymeleaf-3.5.4.jar:/home/runner/.m2/repository/org/thymeleaf/thymeleaf-spring6/3.1.3.RELEASE/thymeleaf-spring6-3.1.3.RELEASE.jar:/home/runner/.m2/repository/org/thymeleaf/thymeleaf/3.1.3.RELEASE/thymeleaf-3.1.3.RELEASE.jar:/home/runner/.m2/repository/org/attoparser/attoparser/2.0.7.RELEASE/attoparser-2.0.7.RELEASE.jar:/home/runner/.m2/repository/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.5.4/spring-boot-starter-web-3.5.4.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.5.4/spring-boot-starter-json-3.5.4.jar:/home/runner/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.19.2/jackson-datatype-jdk8-2.19.2.jar:/home/runner/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.19.2/jackson-module-parameter-names-2.19.2.jar:/home/runner/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.5.4/spring-boot-starter-tomcat-3.5.4.jar:/home/runner/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.43/tomcat-embed-core-10.1.43.jar:/home/runner/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.43/tomcat-embed-websocket-10.1.43.jar:/home/runner/.m2/repository/org/springframework/spring-web/6.2.9/spring-web-6.2.9.jar:/home/runner/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.8.9/springdoc-openapi-starter-webmvc-ui-2.8.9.jar:/home/runner/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.8.9/springdoc-openapi-starter-webmvc-api-2.8.9.jar:/home/runner/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.8.9/springdoc-openapi-starter-common-2.8.9.jar:/home/runner/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.30/swagger-core-jakarta-2.2.30.jar:/home/runner/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.30/swagger-annotations-jakarta-2.2.30.jar:/home/runner/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.30/swagger-models-jakarta-2.2.30.jar:/home/runner/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.19.2/jackson-dataformat-yaml-2.19.2.jar:/home/runner/.m2/repository/org/webjars/swagger-ui/5.21.0/swagger-ui-5.21.0.jar:/home/runner/.m2/repository/org/webjars/webjars-locator-lite/1.1.0/webjars-locator-lite-1.1.0.jar:/home/runner/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/runner/.m2/repository/org/mockito/mockito-core/5.19.0/mockito-core-5.19.0.jar:/home/runner/.m2/repository/net/bytebuddy/byte-buddy/1.17.6/byte-buddy-1.17.6.jar:/home/runner/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.6/byte-buddy-agent-1.17.6.jar:/home/runner/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/runner/.m2/repository/org/mock-server/mockserver-spring-test-listener/5.15.0/mockserver-spring-test-listener-5.15.0.jar:/home/runner/.m2/repository/org/mock-server/mockserver-netty/5.15.0/mockserver-netty-5.15.0.jar:/home/runner/.m2/repository/org/mock-server/mockserver-client-java/5.15.0/mockserver-client-java-5.15.0.jar:/home/runner/.m2/repository/org/mock-server/mockserver-core/5.15.0/mockserver-core-5.15.0.jar:/home/runner/.m2/repository/com/lmax/disruptor/3.4.4/disruptor-3.4.4.jar:/home/runner/.m2/repository/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar:/home/runner/.m2/repository/io/netty/netty-codec-socks/4.1.123.Final/netty-codec-socks-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-handler-proxy/4.1.123.Final/netty-handler-proxy-4.1.123.Final.jar:/home/runner/.m2/repository/com/jcraft/jzlib/1.1.3/jzlib-1.1.3.jar:/home/runner/.m2/repository/com/fasterxml/uuid/java-uuid-generator/4.1.0/java-uuid-generator-4.1.0.jar:/home/runner/.m2/repository/com/nimbusds/nimbus-jose-jwt/9.28/nimbus-jose-jwt-9.28.jar:/home/runner/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar:/home/runner/.m2/repository/org/apache/velocity/velocity-engine-scripting/2.3/velocity-engine-scripting-2.3.jar:/home/runner/.m2/repository/org/apache/velocity/velocity-engine-core/2.3/velocity-engine-core-2.3.jar:/home/runner/.m2/repository/org/apache/velocity/tools/velocity-tools-generic/3.1/velocity-tools-generic-3.1.jar:/home/runner/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/home/runner/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/runner/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/home/runner/.m2/repository/org/apache/commons/commons-digester3/3.2/commons-digester3-3.2.jar:/home/runner/.m2/repository/com/github/cliftonlabs/json-simple/3.0.2/json-simple-3.0.2.jar:/home/runner/.m2/repository/com/samskivert/jmustache/1.16/jmustache-1.16.jar:/home/runner/.m2/repository/net/javacrumbs/json-unit/json-unit-core/2.36.0/json-unit-core-2.36.0.jar:/home/runner/.m2/repository/org/hamcrest/hamcrest-core/3.0/hamcrest-core-3.0.jar:/home/runner/.m2/repository/com/networknt/json-schema-validator/1.0.76/json-schema-validator-1.0.76.jar:/home/runner/.m2/repository/com/ethlo/time/itu/1.7.0/itu-1.7.0.jar:/home/runner/.m2/repository/io/swagger/parser/v3/swagger-parser/2.1.10/swagger-parser-2.1.10.jar:/home/runner/.m2/repository/io/swagger/parser/v3/swagger-parser-v2-converter/2.1.10/swagger-parser-v2-converter-2.1.10.jar:/home/runner/.m2/repository/io/swagger/swagger-core/1.6.9/swagger-core-1.6.9.jar:/home/runner/.m2/repository/io/swagger/swagger-models/1.6.9/swagger-models-1.6.9.jar:/home/runner/.m2/repository/io/swagger/swagger-annotations/1.6.9/swagger-annotations-1.6.9.jar:/home/runner/.m2/repository/io/swagger/swagger-parser/1.0.64/swagger-parser-1.0.64.jar:/home/runner/.m2/repository/io/swagger/swagger-compat-spec-parser/1.0.64/swagger-compat-spec-parser-1.0.64.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-schema-validator/2.2.14/json-schema-validator-2.2.14.jar:/home/runner/.m2/repository/com/github/java-json-tools/jackson-coreutils-equivalence/1.0/jackson-coreutils-equivalence-1.0.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-schema-core/1.2.14/json-schema-core-1.2.14.jar:/home/runner/.m2/repository/com/github/java-json-tools/uri-template/0.10/uri-template-0.10.jar:/home/runner/.m2/repository/org/mozilla/rhino/1.7.7.2/rhino-1.7.7.2.jar:/home/runner/.m2/repository/com/sun/mail/mailapi/1.6.2/mailapi-1.6.2.jar:/home/runner/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/home/runner/.m2/repository/com/googlecode/libphonenumber/libphonenumber/8.11.1/libphonenumber-8.11.1.jar:/home/runner/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/runner/.m2/repository/com/github/java-json-tools/json-patch/1.13/json-patch-1.13.jar:/home/runner/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/home/runner/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/home/runner/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/runner/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/runner/.m2/repository/io/swagger/core/v3/swagger-models/2.2.8/swagger-models-2.2.8.jar:/home/runner/.m2/repository/io/swagger/parser/v3/swagger-parser-core/2.1.10/swagger-parser-core-2.1.10.jar:/home/runner/.m2/repository/io/swagger/parser/v3/swagger-parser-v3/2.1.10/swagger-parser-v3-2.1.10.jar:/home/runner/.m2/repository/io/swagger/core/v3/swagger-core/2.2.8/swagger-core-2.2.8.jar:/home/runner/.m2/repository/io/swagger/core/v3/swagger-annotations/2.2.8/swagger-annotations-2.2.8.jar:/home/runner/.m2/repository/com/sun/xml/bind/jaxb-impl/4.0.5/jaxb-impl-4.0.5.jar:/home/runner/.m2/repository/com/sun/xml/bind/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/home/runner/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/home/runner/.m2/repository/org/xmlunit/xmlunit-placeholders/2.10.3/xmlunit-placeholders-2.10.3.jar:/home/runner/.m2/repository/org/apache/commons/commons-text/1.10.0/commons-text-1.10.0.jar:/home/runner/.m2/repository/io/github/classgraph/classgraph/4.8.154/classgraph-4.8.154.jar:/home/runner/.m2/repository/io/prometheus/simpleclient/0.16.0/simpleclient-0.16.0.jar:/home/runner/.m2/repository/io/prometheus/simpleclient_tracer_otel/0.16.0/simpleclient_tracer_otel-0.16.0.jar:/home/runner/.m2/repository/io/prometheus/simpleclient_tracer_common/0.16.0/simpleclient_tracer_common-0.16.0.jar:/home/runner/.m2/repository/io/prometheus/simpleclient_tracer_otel_agent/0.16.0/simpleclient_tracer_otel_agent-0.16.0.jar:/home/runner/.m2/repository/io/prometheus/simpleclient_httpserver/0.16.0/simpleclient_httpserver-0.16.0.jar:/home/runner/.m2/repository/io/prometheus/simpleclient_common/0.16.0/simpleclient_common-0.16.0.jar:/home/runner/.m2/repository/io/netty/netty-buffer/4.1.123.Final/netty-buffer-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-codec/4.1.123.Final/netty-codec-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-codec-http/4.1.123.Final/netty-codec-http-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-codec-http2/4.1.123.Final/netty-codec-http2-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-common/4.1.123.Final/netty-common-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-handler/4.1.123.Final/netty-handler-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-resolver/4.1.123.Final/netty-resolver-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.123.Final/netty-transport-native-unix-common-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-transport/4.1.123.Final/netty-transport-4.1.123.Final.jar:/home/runner/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.72.Final/netty-tcnative-boringssl-static-2.0.72.Final.jar:/home/runner/.m2/repository/io/netty/netty-tcnative-classes/2.0.72.Final/netty-tcnative-classes-2.0.72.Final.jar:/home/runner/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.72.Final/netty-tcnative-boringssl-static-2.0.72.Final-linux-x86_64.jar:/home/runner/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.72.Final/netty-tcnative-boringssl-static-2.0.72.Final-linux-aarch_64.jar:/home/runner/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.72.Final/netty-tcnative-boringssl-static-2.0.72.Final-osx-x86_64.jar:/home/runner/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.72.Final/netty-tcnative-boringssl-static-2.0.72.Final-osx-aarch_64.jar:/home/runner/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.72.Final/netty-tcnative-boringssl-static-2.0.72.Final-windows-x86_64.jar:/home/runner/.m2/repository/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar:/home/runner/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/runner/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/runner/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/runner/.m2/repository/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar:/home/runner/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/home/runner/.m2/repository/org/springframework/spring-beans/6.2.9/spring-beans-6.2.9.jar:/home/runner/.m2/repository/org/springframework/spring-context/6.2.9/spring-context-6.2.9.jar:/home/runner/.m2/repository/de/gematik/idp/idp-commons/29.3.2/idp-commons-29.3.2.jar:/home/runner/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/4.0.0/jakarta.ws.rs-api-4.0.0.jar:/home/runner/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.2/jackson-annotations-2.19.2.jar:/home/runner/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/home/runner/.m2/repository/de/gematik/idp/idp-crypto/29.3.2/idp-crypto-29.3.2.jar:/home/runner/.m2/repository/org/bouncycastle/bcpkix-jdk18on/1.81/bcpkix-jdk18on-1.81.jar:/home/runner/.m2/repository/org/bouncycastle/bcutil-jdk18on/1.81/bcutil-jdk18on-1.81.jar:/home/runner/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.81/bcprov-jdk18on-1.81.jar:/home/runner/.m2/repository/org/bitbucket/b_c/jose4j/0.9.6/jose4j-0.9.6.jar:/home/runner/.m2/repository/commons-codec/commons-codec/1.18.0/commons-codec-1.18.0.jar:/home/runner/.m2/repository/com/konghq/unirest-objectmapper-jackson/4.2.9/unirest-objectmapper-jackson-4.2.9.jar:/home/runner/.m2/repository/de/gematik/idp/idp-test/29.3.2/idp-test-29.3.2.jar:/home/runner/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.12.2/junit-jupiter-engine-5.12.2.jar:/home/runner/.m2/repository/org/junit/platform/junit-platform-engine/1.12.2/junit-platform-engine-1.12.2.jar:/home/runner/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/runner/.m2/repository/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar:/home/runner/.m2/repository/org/springframework/spring-webmvc/6.2.9/spring-webmvc-6.2.9.jar:/home/runner/.m2/repository/org/springframework/spring-aop/6.2.9/spring-aop-6.2.9.jar:/home/runner/.m2/repository/org/springframework/spring-expression/6.2.9/spring-expression-6.2.9.jar:/home/runner/.m2/repository/com/konghq/unirest-java-core/4.5.0/unirest-java-core-4.5.0.jar:/home/runner/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.3.4/httpcore5-5.3.4.jar:/home/runner/.m2/repository/com/google/code/gson/gson/2.13.1/gson-2.13.1.jar:/home/runner/.m2/repository/com/google/errorprone/error_prone_annotations/2.38.0/error_prone_annotations-2.38.0.jar:/home/runner/.m2/repository/jakarta/validation/jakarta.validation-api/3.1.1/jakarta.validation-api-3.1.1.jar:/home/runner/.m2/repository/jakarta/annotation/jakarta.annotation-api/3.0.0/jakarta.annotation-api-3.0.0.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-slf4j2-impl/2.24.3/log4j-slf4j2-impl-2.24.3.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-api/2.25.1/log4j-api-2.25.1.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-core/2.25.1/log4j-core-2.25.1.jar:/home/runner/.m2/repository/com/google/zxing/core/3.5.3/core-3.5.3.jar:/home/runner/.m2/repository/com/google/zxing/javase/3.5.3/javase-3.5.3.jar:/home/runner/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/home/runner/.m2/repository/com/github/jai-imageio/jai-imageio-core/1.4.0/jai-imageio-core-1.4.0.jar:/home/runner/.m2/repository/org/mockito/mockito-inline/5.2.0/mockito-inline-5.2.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/runner"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-07-15"/>
+    <property name="java.home" value="/usr/lib/jvm/temurin-21-jdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-server"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-server/target/surefire/surefirebooter-20251026060813837_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.8+9-LTS"/>
+    <property name="user.name" value="runner"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.11.0-1018-azure"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-21.0.8+9"/>
+    <property name="localRepository" value="/home/runner/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="catalina.home" value="/tmp/tomcat.0.7297343418234123476"/>
+    <property name="java.version" value="21.0.8"/>
+    <property name="user.dir" value="/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-server"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="3815"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="catalina.base" value="/tmp/tomcat.0.6420852281793247709"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="21.0.8+9-LTS"/>
+    <property name="https.protocols" value="TLSv1,TLSv1.1,TLSv1.2"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+    <property name="jacoco-agent.destfile" value="/home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-server/../gsi-coverage-report/target/jacoco.exec"/>
+  </properties>
+  <testcase name="test_getAuthorizationCode_unknownUserId" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.177">
+    <system-out><![CDATA[﻿   ____ _____ __  __      ___ ____  ____      ____  _____ _  _______ ___  ____      _    _     
+  / ___| ____|  \/  |    |_ _|  _ \|  _ \    / ___|| ____| |/ /_   _/ _ \|  _ \    / \  | |    
+ | |  _|  _| | |\/| |_____| || | | | |_) |___\___ \|  _| | ' /  | || | | | |_) |  / _ \ | |    
+ | |_| | |___| |  | |_____| || |_| |  __/_____|__) | |___| . \  | || |_| |  _ <  / ___ \| |___ 
+  \____|_____|_|  |_|    |___|____/|_|       |____/|_____|_|\_\ |_| \___/|_| \_\/_/   \_\_____|
+
+2025-10-26 06:08:32.993 INFO  [main] FedIdpControllerTest:53 - Starting FedIdpControllerTest using Java 21.0.8 with PID 3815 (started by runner in /home/runner/work/app-gemSekIdp/app-gemSekIdp/gsi-server)
+2025-10-26 06:08:32.994 DEBUG [main] FedIdpControllerTest:54 - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-10-26 06:08:32.994 INFO  [main] FedIdpControllerTest:652 - No active profile set, falling back to 1 default profile: "default"
+2025-10-26 06:08:33 5.15.0 INFO Initializing ProtocolHandler ["http-nio-auto-7"] 
+2025-10-26 06:08:33 5.15.0 INFO Starting service [Tomcat] 
+2025-10-26 06:08:33 5.15.0 INFO Starting Servlet engine: [Apache Tomcat/10.1.43] 
+2025-10-26 06:08:33 5.15.0 INFO Initializing Spring embedded WebApplicationContext 
+2025-10-26 06:08:33.398 INFO  [main] GsiServer:59 - GSI_CLIENT_CERT_REQUIRED in env: null
+2025-10-26 06:08:33.398 INFO  [main] GsiServer:60 - isClientCertRequired in config: false
+2025-10-26 06:08:33.398 INFO  [main] GsiServer:61 - gsiConfiguration: GsiConfiguration(serverUrl=http://127.0.0.1:8085, serverUrlMtls=http://127.0.0.1:8085, fedmasterUrl=http://127.0.0.1:8083, fedmasterSigPubKeyFilePath=keys/ref-fedmaster-sig-pubkey.pem, esSigPrivKeyConfig=KeyConfig(fileName=keys/ref-gsi-sig-privkey.pem, keyId=puk_idp_sig, use=sig, x5cInJwks=false), esSigPubKeyConfig=KeyConfig(fileName=keys/ref-gsi-sig-pubkey.pem, keyId=puk_idp_sig, use=sig, x5cInJwks=false), tokenSigKeyConfig=KeyConfig(fileName=classpath:certs/ref-gsi-sig.p12, keyId=puk_fed_idp_token, use=sig, x5cInJwks=false), requestUriTTL=5, clientCertRequired=false, bdeEndpointUrl=null, bdeIkNumber=null, bdeLoggingEnabled=false, bdeCiId=null)
+2025-10-26T06:08:33.399207383Z main OFF loglevel for de.gematik: DEBUG
+2025-10-26 06:08:33.399 INFO  [main] GsiServer:80 - CommonsRequestLoggingFilter enabled
+2025-10-26 06:08:33.404 DEBUG [main] CommonsRequestLoggingFilter:240 - Filter 'requestLoggingFilter' configured for use
+2025-10-26 06:08:33 5.15.0 INFO Starting ProtocolHandler ["http-nio-auto-7"] 
+2025-10-26 06:08:33 5.15.0 INFO Initializing ProtocolHandler ["http-nio-auto-8"] 
+2025-10-26 06:08:33 5.15.0 INFO Starting service [Tomcat] 
+2025-10-26 06:08:33 5.15.0 INFO Starting Servlet engine: [Apache Tomcat/10.1.43] 
+2025-10-26 06:08:33 5.15.0 INFO Initializing Spring embedded WebApplicationContext 
+2025-10-26 06:08:33 5.15.0 INFO Starting ProtocolHandler ["http-nio-auto-8"] 
+2025-10-26 06:08:33.731 INFO  [main] FedIdpControllerTest:59 - Started FedIdpControllerTest in 0.783 seconds (process running for 19.828)
+2025-10-26 06:08:33 5.15.0 INFO Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2025-10-26 06:08:33.741 DEBUG [http-nio-auto-7-exec-1] CommonsRequestLoggingFilter:47 - Before request [GET /.well-known/openid-federation, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"0", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept-encoding:"gzip"]]
+2025-10-26 06:08:33.798 DEBUG [http-nio-auto-7-exec-1] CommonsRequestLoggingFilter:55 - After request [GET /.well-known/openid-federation, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"0", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept-encoding:"gzip"]]
+2025-10-26 06:08:33.801 DEBUG [http-nio-auto-7-exec-2] CommonsRequestLoggingFilter:47 - Before request [GET /jws.json, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"0", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept-encoding:"gzip"]]
+2025-10-26 06:08:33.815 DEBUG [http-nio-auto-7-exec-2] CommonsRequestLoggingFilter:55 - After request [GET /jws.json, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"0", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept-encoding:"gzip"]]
+2025-10-26 06:08:33 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:33.825 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getAuthorizationCode_unknownUserId()
+2025-10-26 06:08:33.922 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:33.922 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:33.923 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 0
+2025-10-26 06:08:33.924 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:1cc49c7bd30dcd75:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 3cc57bed7606ba2a
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:38.924002630Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:33.965 INFO  [main] FedIdpController:310 - App2App-Flow: RX message nr 6 (Authorization Request, getRequestedClaims) at http://127.0.0.1:8085/auth
+2025-10-26 06:08:33.980 INFO  [main] FedIdpController:339 - App2App-Flow: RX message nr 6b/6d (user consent) at http://127.0.0.1:8085
+2025-10-26 06:08:33.985 INFO  [main] GsiExceptionHandler:52 - GsiException: 404 NOT_FOUND "Unknown KVNR"
+]]></system-out>
+  </testcase>
+  <testcase name="test_entityStatement_MetadataClaims" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.006">
+    <system-out><![CDATA[2025-10-26 06:08:33 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:33.997 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_entityStatement_MetadataClaims()
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_claimsParamNotAJsonObject_400" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.013">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.003 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_postPar_claimsParamNotAJsonObject_400()
+2025-10-26 06:08:34.009 INFO  [main] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "parameter claims is not a JSON object"
+]]></system-out>
+  </testcase>
+  <testcase name="test_getTokensForCode_invalidRedirectUri_invalidCodeVerifier_400(String)[1]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.028">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.017 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getTokensForCode_invalidRedirectUri_invalidCodeVerifier_400 idTokenVersion: 1.0.0
+2025-10-26 06:08:34.023 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:34.024 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:34.024 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 1
+2025-10-26 06:08:34.024 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:fb2b069c08b5806f:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:given_name]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 6d0e1848ecb65c36
+ idTokenVersion: 1.0.0
+ expiresAt: 2025-10-26T06:08:39.024668842Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:34.026 INFO  [main] FedIdpController:339 - App2App-Flow: RX message nr 6b/6d (user consent) at http://127.0.0.1:8085
+2025-10-26 06:08:34.034 INFO  [main] FedIdpController:385 - App2App-Flow: RX message nr 10 (Authorization Code) at http://127.0.0.1:8085
+2025-10-26 06:08:34.036 INFO  [main] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "invalid redirect_uri"
+2025-10-26 06:08:34.038 INFO  [main] FedIdpController:385 - App2App-Flow: RX message nr 10 (Authorization Code) at http://127.0.0.1:8085
+2025-10-26 06:08:34.038 INFO  [main] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "invalid redirect_uri"
+]]></system-out>
+  </testcase>
+  <testcase name="test_getTokensForCode_invalidRedirectUri_invalidCodeVerifier_400(String)[2]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.017">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.046 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getTokensForCode_invalidRedirectUri_invalidCodeVerifier_400 idTokenVersion: 2.0.0
+2025-10-26 06:08:34.049 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:34.050 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:34.050 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 2
+2025-10-26 06:08:34.050 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:8055505d1d9a416c:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:given_name]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 3153050ca618b892
+ idTokenVersion: 2.0.0
+ expiresAt: 2025-10-26T06:08:39.050656672Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:34.052 INFO  [main] FedIdpController:339 - App2App-Flow: RX message nr 6b/6d (user consent) at http://127.0.0.1:8085
+2025-10-26 06:08:34.054 INFO  [main] FedIdpController:385 - App2App-Flow: RX message nr 10 (Authorization Code) at http://127.0.0.1:8085
+2025-10-26 06:08:34.055 INFO  [main] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "invalid redirect_uri"
+2025-10-26 06:08:34.056 INFO  [main] FedIdpController:385 - App2App-Flow: RX message nr 10 (Authorization Code) at http://127.0.0.1:8085
+2025-10-26 06:08:34.057 INFO  [main] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "invalid redirect_uri"
+]]></system-out>
+  </testcase>
+  <testcase name="test_entityStatementResponse_ContentTypeEntityStatement" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.007">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.063 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_entityStatementResponse_ContentTypeEntityStatement()
+]]></system-out>
+  </testcase>
+  <testcase name="test_getTokensForCode_tlsCertificateHeader_200(String)[1]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.041">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.071 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getTokensForCode_tlsCertificateHeader_200 idTokenVersion: 1.0.0
+2025-10-26 06:08:34.075 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:34.075 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:34.076 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 3
+2025-10-26 06:08:34.076 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:30a57e2af3783ad8:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 27bf0ac276d6654e
+ idTokenVersion: 1.0.0
+ expiresAt: 2025-10-26T06:08:39.076553012Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:34.078 INFO  [main] FedIdpController:339 - App2App-Flow: RX message nr 6b/6d (user consent) at http://127.0.0.1:8085
+2025-10-26 06:08:34.080 INFO  [main] FedIdpController:385 - App2App-Flow: RX message nr 10 (Authorization Code) at http://127.0.0.1:8085
+2025-10-26 06:08:34.083 INFO  [main] FedIdpController:418 - id-token: eyJhbGciOiJFUzI1NiIsInZlcnNpb24iOiIxLjAuMCIsInR5cCI6IkpXVCIsImtpZCI6InB1a19mZWRfaWRwX3Rva2VuIiwieDVjIjpbIk1JSUNMRENDQWRHZ0F3SUJBZ0lVVGpkOC8zcXBzSUZTNmd2VlNsYTQwUVYwS1Vrd0NnWUlLb1pJemowRUF3SXdlREVMTUFrR0ExVUVCaE1DUkVVeER6QU5CZ05WQkFnTUJrSmxjbXhwYmpFUE1BMEdBMVVFQnd3R1FtVnliR2x1TVJvd0dBWURWUVFLREJGblpXMWhkR2xySUU1UFZDMVdRVXhKUkRFUE1BMEdBMVVFQ3d3R1VGUWdTVVJOTVJvd0dBWURWUVFEREJGeVpXWWdhMlY1SUZSRlUxUXRUMDVNV1RBZUZ3MHlOREV5TURReE1EUXlNVGRhRncweU9EQTRNekF4TURReU1UZGFNSGd4Q3pBSkJnTlZCQVlUQWtSRk1ROHdEUVlEVlFRSURBWkNaWEpzYVc0eER6QU5CZ05WQkFjTUJrSmxjbXhwYmpFYU1CZ0dBMVVFQ2d3UloyVnRZWFJwYXlCT1QxUXRWa0ZNU1VReER6QU5CZ05WQkFzTUJsQlVJRWxFVFRFYU1CZ0dBMVVFQXd3UmNtVm1JR3RsZVNCVVJWTlVMVTlPVEZrd1dUQVRCZ2NxaGtqT1BRSUJCZ2dxaGtqT1BRTUJCd05DQUFSSmF5NmNZNmozY1lCeWwyQ3VUUW40QkU3MzhvdXNHQkMxV1lzQk5STzdhTXBVWllqeVBwYjBpUFF2NWx1ajErZEZ0WGRvWnlNSHVBZXVrV3YzTWVvdW96a3dOekFKQmdOVkhSTUVBakFBTUFzR0ExVWREd1FFQXdJRjREQWRCZ05WSFE0RUZnUVV5YW1qVVpIUGVaT29hUlJCeWFYbTErZTYyRUV3Q2dZSUtvWkl6ajBFQXdJRFNRQXdSZ0loQU9Sc1lnMUNTc0F5cWtmdlB5MnB4UHAzZlRhR2NyQzFoVUc3SExza0F2cytBaUVBckYyNFQvRWFQdmM3MWQzWFZraVI0MFcxQldwS0RDNjY5a1JOM2ZleWk4ND0iXX0.eyJzdWIiOiJYMTEwNDExNjc1LWh0dHA6Ly9sb2NhbGhvc3Q6NDY2NjciLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjQ2NjY3IiwiYWNyIjoiZ2VtYXRpay1laGVhbHRoLWxvYS1oaWdoIiwidXJuOnRlbGVtYXRpazpjbGFpbXM6cHJvZmVzc2lvbiI6IjEuMi4yNzYuMC43Ni40LjQ5IiwidXJuOnRlbGVtYXRpazpjbGFpbXM6aWQiOiJYMTEwNDExNjc1IiwidXJuOnRlbGVtYXRpazpjbGFpbXM6b3JnYW5pemF0aW9uIjoiMTA5NTAwOTY5IiwiYW1yIjpbInVybjp0ZWxlbWF0aWs6YXV0aDplR0siXSwiaXNzIjoiaHR0cDovLzEyNy4wLjAuMTo4MDg1IiwiZXhwIjoxNzYxNDU5MjE0LCJpYXQiOjE3NjE0NTg5MTQsIm5vbmNlIjoiNDIifQ.NMTI1-yUdORtDa3UZsVCjZjdSMz76ahlr8-57F8HndsmDVrJKucinVSxaPyPK3J_132LO3MV4ktozz9LamJzrw
+]]></system-out>
+  </testcase>
+  <testcase name="test_getTokensForCode_tlsCertificateHeader_200(String)[2]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.021">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.113 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getTokensForCode_tlsCertificateHeader_200 idTokenVersion: 2.0.0
+2025-10-26 06:08:34.116 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:34.116 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:34.117 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 3
+2025-10-26 06:08:34.117 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:e4d7a56406db4132:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 74325db5a349f0ad
+ idTokenVersion: 2.0.0
+ expiresAt: 2025-10-26T06:08:39.117505587Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:34.119 INFO  [main] FedIdpController:339 - App2App-Flow: RX message nr 6b/6d (user consent) at http://127.0.0.1:8085
+2025-10-26 06:08:34.120 INFO  [main] FedIdpController:385 - App2App-Flow: RX message nr 10 (Authorization Code) at http://127.0.0.1:8085
+2025-10-26 06:08:34.122 INFO  [main] FedIdpController:418 - id-token: eyJhbGciOiJFUzI1NiIsInZlcnNpb24iOiIyLjAuMCIsInR5cCI6IkpXVCIsImtpZCI6InB1a19mZWRfaWRwX3Rva2VuIiwieDVjIjpbIk1JSUNMRENDQWRHZ0F3SUJBZ0lVVGpkOC8zcXBzSUZTNmd2VlNsYTQwUVYwS1Vrd0NnWUlLb1pJemowRUF3SXdlREVMTUFrR0ExVUVCaE1DUkVVeER6QU5CZ05WQkFnTUJrSmxjbXhwYmpFUE1BMEdBMVVFQnd3R1FtVnliR2x1TVJvd0dBWURWUVFLREJGblpXMWhkR2xySUU1UFZDMVdRVXhKUkRFUE1BMEdBMVVFQ3d3R1VGUWdTVVJOTVJvd0dBWURWUVFEREJGeVpXWWdhMlY1SUZSRlUxUXRUMDVNV1RBZUZ3MHlOREV5TURReE1EUXlNVGRhRncweU9EQTRNekF4TURReU1UZGFNSGd4Q3pBSkJnTlZCQVlUQWtSRk1ROHdEUVlEVlFRSURBWkNaWEpzYVc0eER6QU5CZ05WQkFjTUJrSmxjbXhwYmpFYU1CZ0dBMVVFQ2d3UloyVnRZWFJwYXlCT1QxUXRWa0ZNU1VReER6QU5CZ05WQkFzTUJsQlVJRWxFVFRFYU1CZ0dBMVVFQXd3UmNtVm1JR3RsZVNCVVJWTlVMVTlPVEZrd1dUQVRCZ2NxaGtqT1BRSUJCZ2dxaGtqT1BRTUJCd05DQUFSSmF5NmNZNmozY1lCeWwyQ3VUUW40QkU3MzhvdXNHQkMxV1lzQk5STzdhTXBVWllqeVBwYjBpUFF2NWx1ajErZEZ0WGRvWnlNSHVBZXVrV3YzTWVvdW96a3dOekFKQmdOVkhSTUVBakFBTUFzR0ExVWREd1FFQXdJRjREQWRCZ05WSFE0RUZnUVV5YW1qVVpIUGVaT29hUlJCeWFYbTErZTYyRUV3Q2dZSUtvWkl6ajBFQXdJRFNRQXdSZ0loQU9Sc1lnMUNTc0F5cWtmdlB5MnB4UHAzZlRhR2NyQzFoVUc3SExza0F2cytBaUVBckYyNFQvRWFQdmM3MWQzWFZraVI0MFcxQldwS0RDNjY5a1JOM2ZleWk4ND0iXX0.eyJzdWIiOiJYMTEwNDExNjc1LWh0dHA6Ly9sb2NhbGhvc3Q6NDY2NjciLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjQ2NjY3IiwiYWNyIjoiZ2VtYXRpay1laGVhbHRoLWxvYS1oaWdoIiwidXJuOnRlbGVtYXRpazpjbGFpbXM6cHJvZmVzc2lvbiI6IjEuMi4yNzYuMC43Ni40LjQ5IiwidXJuOnRlbGVtYXRpazpjbGFpbXM6aWQiOiJYMTEwNDExNjc1IiwidXJuOnRlbGVtYXRpazpjbGFpbXM6b3JnYW5pemF0aW9uIjoiMTA5NTAwOTY5IiwiYW1yIjpbInVybjp0ZWxlbWF0aWs6YXV0aDplR0siXSwiaXNzIjoiaHR0cDovLzEyNy4wLjAuMTo4MDg1IiwiZXhwIjoxNzYxNDU5MjE0LCJpYXQiOjE3NjE0NTg5MTQsIm5vbmNlIjoiNDIifQ.JsRt3KBWV_M9ia_jxmBpS9kvhD6omTLKMgyyPOUr6S7ngupe8oalrPMj3qa_W409wELBJ9iu11pBAukzKzPX1g
+]]></system-out>
+  </testcase>
+  <testcase name="test_getLandingPage_invalidRequestUri_400" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.012">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.134 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getLandingPage_invalidRequestUri_400()
+2025-10-26 06:08:34.137 INFO  [main] FedIdpController:276 - App2App-Flow: RX message nr 6 (Authorization Request) at http://127.0.0.1:8085/auth
+2025-10-26 06:08:34.138 INFO  [main] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "unknown request_uri, no session found"
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_invalidTlsCertificateHeader_anyString_401" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.014">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.146 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_postPar_invalidTlsCertificateHeader_anyString_401()
+2025-10-26 06:08:34.150 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:34.150 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:34.151 INFO  [main] GsiExceptionHandler:52 - GsiException: 401 UNAUTHORIZED "client certificate in tls handshake is not a valid x509 certificate"
+]]></system-out>
+  </testcase>
+  <testcase name="test_entityStatement_TiFeaturesSupportedCorrect" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.0">
+    <skipped message="void de.gematik.idp.gsi.server.controller.FedIdpControllerTest.test_entityStatement_TiFeaturesSupportedCorrect() is @Disabled"/>
+  </testcase>
+  <testcase name="test_sigendJwksResponse_ContentTypeEntityStatement" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.006">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.160 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_sigendJwksResponse_ContentTypeEntityStatement()
+]]></system-out>
+  </testcase>
+  <testcase name="test_signedJwksResponse_Keys" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.006">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.166 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_signedJwksResponse_Keys()
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_certInHeaderAndInEntityStatementDontMatch_401" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.014">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.173 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_postPar_certInHeaderAndInEntityStatementDontMatch_401()
+2025-10-26 06:08:34.178 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:34.179 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:34.179 INFO  [main] GsiExceptionHandler:52 - GsiException: 401 UNAUTHORIZED "client certificate in tls handshake does not match any certificate in entity statement/signed_jwks"
+]]></system-out>
+  </testcase>
+  <testcase name="test_getAuthorizationCode_invalidUserId" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.024">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.189 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getAuthorizationCode_invalidUserId()
+2025-10-26 06:08:34.191 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:34.192 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:34.192 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 3
+2025-10-26 06:08:34.193 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:5b9feb220c6d22ed:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: f046a03a50c4716b
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:39.192955076Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:34.194 INFO  [main] FedIdpController:310 - App2App-Flow: RX message nr 6 (Authorization Request, getRequestedClaims) at http://127.0.0.1:8085/auth
+2025-10-26 06:08:34.207 INFO  [main] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "getAuthorizationCode.userId: must match "^[A-Z]\d{9}$""
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_validTlsCertificateHeader_201" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.015">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.214 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_postPar_validTlsCertificateHeader_201()
+2025-10-26 06:08:34.218 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:34.219 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:34.219 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 4
+2025-10-26 06:08:34.219 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:c9358b4c7d0e699c:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: e076ec59a420b081
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:39.219855571Z[Etc/UTC]
+ userData: {}
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_validAmr_201" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.015">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.231 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_postPar_validAmr_201()
+2025-10-26 06:08:34.235 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:34.236 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:34.236 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 5
+2025-10-26 06:08:34.236 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:590c8b2070a67b84:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: d81a7ee7798b8f75
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:39.236725044Z[Etc/UTC]
+ userData: {}
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_invalidAmr_400" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.016">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.246 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_postPar_invalidAmr_400()
+2025-10-26 06:08:34.252 INFO  [main] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "postPar.amr: must match "urn:telematik:auth:eGK|urn:telematik:auth:eID|urn:telematik:auth:sso|urn:telematik:auth:mEW|urn:telematik:auth:guest:eGK|urn:telematik:auth:other""
+]]></system-out>
+  </testcase>
+  <testcase name="test_entityStatement_ContainsJwks" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.006">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.261 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_entityStatement_ContainsJwks()
+]]></system-out>
+  </testcase>
+  <testcase name="test_getAuthorizationCode_validSelectedClaims_302(String)[1]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.013">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.268 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getAuthorizationCode_validSelectedClaims_302 idTokenVersion: 1.0.0
+2025-10-26 06:08:34.271 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:34.272 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:34.272 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 6
+2025-10-26 06:08:34.272 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:8ce1a302cf777b6e:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 7f5cd07df233e061
+ idTokenVersion: 1.0.0
+ expiresAt: 2025-10-26T06:08:39.272626107Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:34.274 INFO  [main] FedIdpController:310 - App2App-Flow: RX message nr 6 (Authorization Request, getRequestedClaims) at http://127.0.0.1:8085/auth
+2025-10-26 06:08:34.275 INFO  [main] FedIdpController:339 - App2App-Flow: RX message nr 6b/6d (user consent) at http://127.0.0.1:8085
+]]></system-out>
+  </testcase>
+  <testcase name="test_getAuthorizationCode_validSelectedClaims_302(String)[2]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.012">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.281 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getAuthorizationCode_validSelectedClaims_302 idTokenVersion: 2.0.0
+2025-10-26 06:08:34.283 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:34.284 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:34.284 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 7
+2025-10-26 06:08:34.284 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:36eb316373271d14:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: a51a1b19fac5c1a9
+ idTokenVersion: 2.0.0
+ expiresAt: 2025-10-26T06:08:39.284849911Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:34.286 INFO  [main] FedIdpController:310 - App2App-Flow: RX message nr 6 (Authorization Request, getRequestedClaims) at http://127.0.0.1:8085/auth
+2025-10-26 06:08:34.287 INFO  [main] FedIdpController:339 - App2App-Flow: RX message nr 6b/6d (user consent) at http://127.0.0.1:8085
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_invalidGetOnPostMapping_405" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.017">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.293 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_postPar_invalidGetOnPostMapping_405()
+2025-10-26 06:08:34.297 DEBUG [http-nio-auto-7-exec-3] CommonsRequestLoggingFilter:47 - Before request [GET /PAR_Auth?client_id=http%3A%2F%2Flocalhost%3A46667&state=state_Fachdienst&redirect_uri=http%3A%2F%2Flocalhost%3A46667%2FAS&code_challenge=P62rd1KSUnScGIEs1WrpYj3g_poTqmx8mM4msxehNdk&code_challenge_method=S256&response_type=code&nonce=42&scope=urn%3Atelematik%3Agiven_name+openid&acr_values=gematik-ehealth-loa-high, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"0", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept-encoding:"gzip"]]
+2025-10-26 06:08:34.301 INFO  [http-nio-auto-7-exec-3] GsiExceptionHandler:52 - GsiException: 405 METHOD_NOT_ALLOWED "Invalid Request"
+2025-10-26 06:08:34.302 DEBUG [http-nio-auto-7-exec-3] CommonsRequestLoggingFilter:55 - After request [GET /PAR_Auth?client_id=http%3A%2F%2Flocalhost%3A46667&state=state_Fachdienst&redirect_uri=http%3A%2F%2Flocalhost%3A46667%2FAS&code_challenge=P62rd1KSUnScGIEs1WrpYj3g_poTqmx8mM4msxehNdk&code_challenge_method=S256&response_type=code&nonce=42&scope=urn%3Atelematik%3Agiven_name+openid&acr_values=gematik-ehealth-loa-high, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"0", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept-encoding:"gzip"]]
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_validClaims_201" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.01">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.312 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_postPar_validClaims_201()
+2025-10-26 06:08:34.315 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:34.316 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:34.316 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 8
+2025-10-26 06:08:34.316 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:e54a425e141bc6af:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:display_name, urn:telematik:claims:given_name]
+ requestedEssentialClaims: [urn:telematik:claims:email]
+ essentialRequestedAcr: [gematik-ehealth-loa-high]
+ essentialRequestedAmr: [urn:telematik:auth:eGK]
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 16aa86badeda12ba
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:39.316829414Z[Etc/UTC]
+ userData: {}
+]]></system-out>
+  </testcase>
+  <testcase name="test_getRequestedClaims_requestUriExpired_400" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="7.035">
+    <system-out><![CDATA[2025-10-26 06:08:34 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:34.322 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getRequestedClaims_requestUriExpired_400()
+2025-10-26 06:08:34.325 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:34.326 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:34.326 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 9
+2025-10-26 06:08:34.326 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:416dd88701268f0a:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization, urn:telematik:claims:given_name]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 2fa99419b22fe3c3
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:39.326564266Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:41.351 INFO  [main] FedIdpController:310 - App2App-Flow: RX message nr 6 (Authorization Request, getRequestedClaims) at http://127.0.0.1:8085/auth
+2025-10-26 06:08:41.352 INFO  [main] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "request_uri expired"
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_validAcrValue_201(String)[1]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.021">
+    <system-out><![CDATA[2025-10-26 06:08:41 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:41.372 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: parRequest_validAcrValue_ResponseStatus_CREATED acr: gematik-ehealth-loa-high
+2025-10-26 06:08:41.376 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:41.376 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:41.377 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 9
+2025-10-26 06:08:41.377 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:92f3e7b9f01d27df:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:given_name]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 1776b7a9d3f439ec
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:46.377356559Z[Etc/UTC]
+ userData: {}
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_validAcrValue_201(String)[2]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.006">
+    <system-out><![CDATA[2025-10-26 06:08:41 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:41.381 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: parRequest_validAcrValue_ResponseStatus_CREATED acr: gematik-ehealth-loa-substantial
+2025-10-26 06:08:41.383 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:41.383 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:41.383 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 10
+2025-10-26 06:08:41.383 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:0c59bdbbfea949e5:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:given_name]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 38c05c2ef23329e9
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:46.383767257Z[Etc/UTC]
+ userData: {}
+]]></system-out>
+  </testcase>
+  <testcase name="test_getTokensForCode_200(String)[1]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.016">
+    <system-out><![CDATA[2025-10-26 06:08:41 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:41.388 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getTokensForCode_200 idTokenVersion: 1.0.0
+2025-10-26 06:08:41.389 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:41.390 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:41.390 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 11
+2025-10-26 06:08:41.390 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:d9aec6643d4d9783:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization, urn:telematik:claims:display_name, urn:telematik:claims:given_name]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 670a3ca6478adc61
+ idTokenVersion: 1.0.0
+ expiresAt: 2025-10-26T06:08:46.390461182Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:41.391 INFO  [main] FedIdpController:339 - App2App-Flow: RX message nr 6b/6d (user consent) at http://127.0.0.1:8085
+2025-10-26 06:08:41.393 INFO  [main] FedIdpController:385 - App2App-Flow: RX message nr 10 (Authorization Code) at http://127.0.0.1:8085
+2025-10-26 06:08:41.394 INFO  [main] FedIdpController:418 - id-token: eyJhbGciOiJFUzI1NiIsInZlcnNpb24iOiIxLjAuMCIsInR5cCI6IkpXVCIsImtpZCI6InB1a19mZWRfaWRwX3Rva2VuIiwieDVjIjpbIk1JSUNMRENDQWRHZ0F3SUJBZ0lVVGpkOC8zcXBzSUZTNmd2VlNsYTQwUVYwS1Vrd0NnWUlLb1pJemowRUF3SXdlREVMTUFrR0ExVUVCaE1DUkVVeER6QU5CZ05WQkFnTUJrSmxjbXhwYmpFUE1BMEdBMVVFQnd3R1FtVnliR2x1TVJvd0dBWURWUVFLREJGblpXMWhkR2xySUU1UFZDMVdRVXhKUkRFUE1BMEdBMVVFQ3d3R1VGUWdTVVJOTVJvd0dBWURWUVFEREJGeVpXWWdhMlY1SUZSRlUxUXRUMDVNV1RBZUZ3MHlOREV5TURReE1EUXlNVGRhRncweU9EQTRNekF4TURReU1UZGFNSGd4Q3pBSkJnTlZCQVlUQWtSRk1ROHdEUVlEVlFRSURBWkNaWEpzYVc0eER6QU5CZ05WQkFjTUJrSmxjbXhwYmpFYU1CZ0dBMVVFQ2d3UloyVnRZWFJwYXlCT1QxUXRWa0ZNU1VReER6QU5CZ05WQkFzTUJsQlVJRWxFVFRFYU1CZ0dBMVVFQXd3UmNtVm1JR3RsZVNCVVJWTlVMVTlPVEZrd1dUQVRCZ2NxaGtqT1BRSUJCZ2dxaGtqT1BRTUJCd05DQUFSSmF5NmNZNmozY1lCeWwyQ3VUUW40QkU3MzhvdXNHQkMxV1lzQk5STzdhTXBVWllqeVBwYjBpUFF2NWx1ajErZEZ0WGRvWnlNSHVBZXVrV3YzTWVvdW96a3dOekFKQmdOVkhSTUVBakFBTUFzR0ExVWREd1FFQXdJRjREQWRCZ05WSFE0RUZnUVV5YW1qVVpIUGVaT29hUlJCeWFYbTErZTYyRUV3Q2dZSUtvWkl6ajBFQXdJRFNRQXdSZ0loQU9Sc1lnMUNTc0F5cWtmdlB5MnB4UHAzZlRhR2NyQzFoVUc3SExza0F2cytBaUVBckYyNFQvRWFQdmM3MWQzWFZraVI0MFcxQldwS0RDNjY5a1JOM2ZleWk4ND0iXX0.eyJzdWIiOiJYMTEwNDExNjc1LWh0dHA6Ly9sb2NhbGhvc3Q6NDY2NjciLCJ1cm46dGVsZW1hdGlrOmNsYWltczppZCI6IlgxMTA0MTE2NzUiLCJ1cm46dGVsZW1hdGlrOmNsYWltczpvcmdhbml6YXRpb24iOiIxMDk1MDA5NjkiLCJhbXIiOlsidXJuOnRlbGVtYXRpazphdXRoOmVHSyJdLCJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwODUiLCJ1cm46dGVsZW1hdGlrOmNsYWltczpkaXNwbGF5X25hbWUiOiJEYXJpdXMgTWljaGFlbCBCcmlhbiBVYmJvIEdyYWYgdm9uIELDtmRlZmVsZCIsIm5vbmNlIjoiNDIiLCJ1cm46dGVsZW1hdGlrOmNsYWltczpnaXZlbl9uYW1lIjoiRGFyaXVzIE1pY2hhZWwgQnJpYW4gVWJibyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NDY2NjciLCJhY3IiOiJnZW1hdGlrLWVoZWFsdGgtbG9hLWhpZ2giLCJ1cm46dGVsZW1hdGlrOmNsYWltczpwcm9mZXNzaW9uIjoiMS4yLjI3Ni4wLjc2LjQuNDkiLCJleHAiOjE3NjE0NTkyMjEsImlhdCI6MTc2MTQ1ODkyMX0.4IE95TwlSRiBmn05YWiMFOZKJEf0GP7kPAGCkkac9PHYShm-z5w_ZgBvHaNn-SDzEmyn4D1FI0G48JCUsYEsiQ
+]]></system-out>
+  </testcase>
+  <testcase name="test_getTokensForCode_200(String)[2]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.014">
+    <system-out><![CDATA[2025-10-26 06:08:41 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:41.404 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getTokensForCode_200 idTokenVersion: 2.0.0
+2025-10-26 06:08:41.406 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:41.406 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:41.407 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 11
+2025-10-26 06:08:41.407 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:c13c9db6598abd87:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization, urn:telematik:claims:display_name, urn:telematik:claims:given_name]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 98d6ccb329aaec8c
+ idTokenVersion: 2.0.0
+ expiresAt: 2025-10-26T06:08:46.407527413Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:41.409 INFO  [main] FedIdpController:339 - App2App-Flow: RX message nr 6b/6d (user consent) at http://127.0.0.1:8085
+2025-10-26 06:08:41.410 INFO  [main] FedIdpController:385 - App2App-Flow: RX message nr 10 (Authorization Code) at http://127.0.0.1:8085
+2025-10-26 06:08:41.412 INFO  [main] FedIdpController:418 - id-token: eyJhbGciOiJFUzI1NiIsInZlcnNpb24iOiIyLjAuMCIsInR5cCI6IkpXVCIsImtpZCI6InB1a19mZWRfaWRwX3Rva2VuIiwieDVjIjpbIk1JSUNMRENDQWRHZ0F3SUJBZ0lVVGpkOC8zcXBzSUZTNmd2VlNsYTQwUVYwS1Vrd0NnWUlLb1pJemowRUF3SXdlREVMTUFrR0ExVUVCaE1DUkVVeER6QU5CZ05WQkFnTUJrSmxjbXhwYmpFUE1BMEdBMVVFQnd3R1FtVnliR2x1TVJvd0dBWURWUVFLREJGblpXMWhkR2xySUU1UFZDMVdRVXhKUkRFUE1BMEdBMVVFQ3d3R1VGUWdTVVJOTVJvd0dBWURWUVFEREJGeVpXWWdhMlY1SUZSRlUxUXRUMDVNV1RBZUZ3MHlOREV5TURReE1EUXlNVGRhRncweU9EQTRNekF4TURReU1UZGFNSGd4Q3pBSkJnTlZCQVlUQWtSRk1ROHdEUVlEVlFRSURBWkNaWEpzYVc0eER6QU5CZ05WQkFjTUJrSmxjbXhwYmpFYU1CZ0dBMVVFQ2d3UloyVnRZWFJwYXlCT1QxUXRWa0ZNU1VReER6QU5CZ05WQkFzTUJsQlVJRWxFVFRFYU1CZ0dBMVVFQXd3UmNtVm1JR3RsZVNCVVJWTlVMVTlPVEZrd1dUQVRCZ2NxaGtqT1BRSUJCZ2dxaGtqT1BRTUJCd05DQUFSSmF5NmNZNmozY1lCeWwyQ3VUUW40QkU3MzhvdXNHQkMxV1lzQk5STzdhTXBVWllqeVBwYjBpUFF2NWx1ajErZEZ0WGRvWnlNSHVBZXVrV3YzTWVvdW96a3dOekFKQmdOVkhSTUVBakFBTUFzR0ExVWREd1FFQXdJRjREQWRCZ05WSFE0RUZnUVV5YW1qVVpIUGVaT29hUlJCeWFYbTErZTYyRUV3Q2dZSUtvWkl6ajBFQXdJRFNRQXdSZ0loQU9Sc1lnMUNTc0F5cWtmdlB5MnB4UHAzZlRhR2NyQzFoVUc3SExza0F2cytBaUVBckYyNFQvRWFQdmM3MWQzWFZraVI0MFcxQldwS0RDNjY5a1JOM2ZleWk4ND0iXX0.eyJzdWIiOiJYMTEwNDExNjc1LWh0dHA6Ly9sb2NhbGhvc3Q6NDY2NjciLCJ1cm46dGVsZW1hdGlrOmNsYWltczppZCI6IlgxMTA0MTE2NzUiLCJ1cm46dGVsZW1hdGlrOmNsYWltczpvcmdhbml6YXRpb24iOiIxMDk1MDA5NjkiLCJhbXIiOlsidXJuOnRlbGVtYXRpazphdXRoOmVHSyJdLCJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwODUiLCJ1cm46dGVsZW1hdGlrOmNsYWltczpkaXNwbGF5X25hbWUiOiJEYXJpdXMgTWljaGFlbCBCcmlhbiBVYmJvIEdyYWYgdm9uIELDtmRlZmVsZCIsIm5vbmNlIjoiNDIiLCJ1cm46dGVsZW1hdGlrOmNsYWltczpnaXZlbl9uYW1lIjoiRGFyaXVzIE1pY2hhZWwgQnJpYW4gVWJibyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NDY2NjciLCJhY3IiOiJnZW1hdGlrLWVoZWFsdGgtbG9hLWhpZ2giLCJ1cm46dGVsZW1hdGlrOmNsYWltczpwcm9mZXNzaW9uIjoiMS4yLjI3Ni4wLjc2LjQuNDkiLCJleHAiOjE3NjE0NTkyMjEsImlhdCI6MTc2MTQ1ODkyMX0.sxDS0IHDNLAtSaeiuIqjQZD1tZdL0uYJzvB9phtFOHXe4XF-VDIcV5D7xtuKCCGj1N9vToecK0JDWGUUhQY7dg
+]]></system-out>
+  </testcase>
+  <testcase name="test_signedJwksResponse_JoseHeader" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.003">
+    <system-out><![CDATA[2025-10-26 06:08:41 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:41.418 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_signedJwksResponse_JoseHeader()
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_validClientId_201" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.005">
+    <system-out><![CDATA[2025-10-26 06:08:41 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:41.422 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_postPar_validClientId_201()
+2025-10-26 06:08:41.424 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:41.424 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:41.424 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 11
+2025-10-26 06:08:41.424 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://127.0.0.1:8084:fee38f6ca7852663:
+ fachdienstClientId: http://127.0.0.1:8084
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:given_name]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 5fc45b166a67a640
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:46.424886468Z[Etc/UTC]
+ userData: {}
+]]></system-out>
+  </testcase>
+  <testcase name="test_getTokensForCode_invalidGrantType_400" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.02">
+    <system-out><![CDATA[2025-10-26 06:08:41 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:41.428 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getTokensForCode_invalidGrantType_400()
+2025-10-26 06:08:41.438 DEBUG [http-nio-auto-7-exec-4] CommonsRequestLoggingFilter:47 - Before request [POST /token, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"137", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept:"application/json", accept-encoding:"gzip", Content-Type:"application/x-www-form-urlencoded;charset=UTF-8"]]
+2025-10-26 06:08:41.440 INFO  [http-nio-auto-7-exec-4] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "getTokensForCode.grantType: must match "authorization_code""
+2025-10-26 06:08:41.441 DEBUG [http-nio-auto-7-exec-4] CommonsRequestLoggingFilter:55 - After request [POST /token, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"137", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept:"application/json", accept-encoding:"gzip", Content-Type:"application/x-www-form-urlencoded;charset=UTF-8"], payload=client_id=https%3A%2F%2FDUMMY_CLIENT.de&code=DUMMY_CODE&code_verifier=DUMMY_CODE_VERIFIER&grant_type=auth&redirect_uri=DUMMY_REDIRECT_URI]
+]]></system-out>
+  </testcase>
+  <testcase name="test_getTokensForCode_withSelectedClaims_200(String)[1]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.017">
+    <system-out><![CDATA[2025-10-26 06:08:41 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:41.449 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getTokensForCode_withSelectedClaims_200 idTokenVersion: 1.0.0
+2025-10-26 06:08:41.452 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:41.453 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:41.453 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 12
+2025-10-26 06:08:41.453 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:bfa4bd4643410959:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 23ad9f693cf37150
+ idTokenVersion: 1.0.0
+ expiresAt: 2025-10-26T06:08:46.453597237Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:41.455 INFO  [main] FedIdpController:310 - App2App-Flow: RX message nr 6 (Authorization Request, getRequestedClaims) at http://127.0.0.1:8085/auth
+2025-10-26 06:08:41.456 INFO  [main] FedIdpController:339 - App2App-Flow: RX message nr 6b/6d (user consent) at http://127.0.0.1:8085
+2025-10-26 06:08:41.457 INFO  [main] FedIdpController:385 - App2App-Flow: RX message nr 10 (Authorization Code) at http://127.0.0.1:8085
+2025-10-26 06:08:41.459 INFO  [main] FedIdpController:418 - id-token: eyJhbGciOiJFUzI1NiIsInZlcnNpb24iOiIxLjAuMCIsInR5cCI6IkpXVCIsImtpZCI6InB1a19mZWRfaWRwX3Rva2VuIiwieDVjIjpbIk1JSUNMRENDQWRHZ0F3SUJBZ0lVVGpkOC8zcXBzSUZTNmd2VlNsYTQwUVYwS1Vrd0NnWUlLb1pJemowRUF3SXdlREVMTUFrR0ExVUVCaE1DUkVVeER6QU5CZ05WQkFnTUJrSmxjbXhwYmpFUE1BMEdBMVVFQnd3R1FtVnliR2x1TVJvd0dBWURWUVFLREJGblpXMWhkR2xySUU1UFZDMVdRVXhKUkRFUE1BMEdBMVVFQ3d3R1VGUWdTVVJOTVJvd0dBWURWUVFEREJGeVpXWWdhMlY1SUZSRlUxUXRUMDVNV1RBZUZ3MHlOREV5TURReE1EUXlNVGRhRncweU9EQTRNekF4TURReU1UZGFNSGd4Q3pBSkJnTlZCQVlUQWtSRk1ROHdEUVlEVlFRSURBWkNaWEpzYVc0eER6QU5CZ05WQkFjTUJrSmxjbXhwYmpFYU1CZ0dBMVVFQ2d3UloyVnRZWFJwYXlCT1QxUXRWa0ZNU1VReER6QU5CZ05WQkFzTUJsQlVJRWxFVFRFYU1CZ0dBMVVFQXd3UmNtVm1JR3RsZVNCVVJWTlVMVTlPVEZrd1dUQVRCZ2NxaGtqT1BRSUJCZ2dxaGtqT1BRTUJCd05DQUFSSmF5NmNZNmozY1lCeWwyQ3VUUW40QkU3MzhvdXNHQkMxV1lzQk5STzdhTXBVWllqeVBwYjBpUFF2NWx1ajErZEZ0WGRvWnlNSHVBZXVrV3YzTWVvdW96a3dOekFKQmdOVkhSTUVBakFBTUFzR0ExVWREd1FFQXdJRjREQWRCZ05WSFE0RUZnUVV5YW1qVVpIUGVaT29hUlJCeWFYbTErZTYyRUV3Q2dZSUtvWkl6ajBFQXdJRFNRQXdSZ0loQU9Sc1lnMUNTc0F5cWtmdlB5MnB4UHAzZlRhR2NyQzFoVUc3SExza0F2cytBaUVBckYyNFQvRWFQdmM3MWQzWFZraVI0MFcxQldwS0RDNjY5a1JOM2ZleWk4ND0iXX0.eyJzdWIiOiJYMTEwNDExNjc1LWh0dHA6Ly9sb2NhbGhvc3Q6NDY2NjciLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjQ2NjY3IiwiYWNyIjoiZ2VtYXRpay1laGVhbHRoLWxvYS1zdWJzdGFudGlhbCIsInVybjp0ZWxlbWF0aWs6Y2xhaW1zOnByb2Zlc3Npb24iOiIxLjIuMjc2LjAuNzYuNC40OSIsInVybjp0ZWxlbWF0aWs6Y2xhaW1zOmlkIjoiWDExMDQxMTY3NSIsInVybjp0ZWxlbWF0aWs6Y2xhaW1zOm9yZ2FuaXphdGlvbiI6IjEwOTUwMDk2OSIsImFtciI6WyJ1cm46dGVsZW1hdGlrOmF1dGg6ZUdLIl0sImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4NSIsImV4cCI6MTc2MTQ1OTIyMSwiaWF0IjoxNzYxNDU4OTIxLCJub25jZSI6IjQyIn0.-XJUQVyvBbQG-OxoTDkbvNONyGDjuvkHmgj1BkJvhyc3BZOtsXiMCdjiml1jrhCnA8hlR-jF8IYp6ffx5zSOzQ
+]]></system-out>
+  </testcase>
+  <testcase name="test_getTokensForCode_withSelectedClaims_200(String)[2]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.015">
+    <system-out><![CDATA[2025-10-26 06:08:41 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:41.467 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getTokensForCode_withSelectedClaims_200 idTokenVersion: 2.0.0
+2025-10-26 06:08:41.469 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:41.470 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:41.470 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 12
+2025-10-26 06:08:41.470 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:5e1e392a50e13be7:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 1c4dc3d631bd6ca4
+ idTokenVersion: 2.0.0
+ expiresAt: 2025-10-26T06:08:46.470515664Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:41.471 INFO  [main] FedIdpController:310 - App2App-Flow: RX message nr 6 (Authorization Request, getRequestedClaims) at http://127.0.0.1:8085/auth
+2025-10-26 06:08:41.473 INFO  [main] FedIdpController:339 - App2App-Flow: RX message nr 6b/6d (user consent) at http://127.0.0.1:8085
+2025-10-26 06:08:41.474 INFO  [main] FedIdpController:385 - App2App-Flow: RX message nr 10 (Authorization Code) at http://127.0.0.1:8085
+2025-10-26 06:08:41.475 INFO  [main] FedIdpController:418 - id-token: eyJhbGciOiJFUzI1NiIsInZlcnNpb24iOiIyLjAuMCIsInR5cCI6IkpXVCIsImtpZCI6InB1a19mZWRfaWRwX3Rva2VuIiwieDVjIjpbIk1JSUNMRENDQWRHZ0F3SUJBZ0lVVGpkOC8zcXBzSUZTNmd2VlNsYTQwUVYwS1Vrd0NnWUlLb1pJemowRUF3SXdlREVMTUFrR0ExVUVCaE1DUkVVeER6QU5CZ05WQkFnTUJrSmxjbXhwYmpFUE1BMEdBMVVFQnd3R1FtVnliR2x1TVJvd0dBWURWUVFLREJGblpXMWhkR2xySUU1UFZDMVdRVXhKUkRFUE1BMEdBMVVFQ3d3R1VGUWdTVVJOTVJvd0dBWURWUVFEREJGeVpXWWdhMlY1SUZSRlUxUXRUMDVNV1RBZUZ3MHlOREV5TURReE1EUXlNVGRhRncweU9EQTRNekF4TURReU1UZGFNSGd4Q3pBSkJnTlZCQVlUQWtSRk1ROHdEUVlEVlFRSURBWkNaWEpzYVc0eER6QU5CZ05WQkFjTUJrSmxjbXhwYmpFYU1CZ0dBMVVFQ2d3UloyVnRZWFJwYXlCT1QxUXRWa0ZNU1VReER6QU5CZ05WQkFzTUJsQlVJRWxFVFRFYU1CZ0dBMVVFQXd3UmNtVm1JR3RsZVNCVVJWTlVMVTlPVEZrd1dUQVRCZ2NxaGtqT1BRSUJCZ2dxaGtqT1BRTUJCd05DQUFSSmF5NmNZNmozY1lCeWwyQ3VUUW40QkU3MzhvdXNHQkMxV1lzQk5STzdhTXBVWllqeVBwYjBpUFF2NWx1ajErZEZ0WGRvWnlNSHVBZXVrV3YzTWVvdW96a3dOekFKQmdOVkhSTUVBakFBTUFzR0ExVWREd1FFQXdJRjREQWRCZ05WSFE0RUZnUVV5YW1qVVpIUGVaT29hUlJCeWFYbTErZTYyRUV3Q2dZSUtvWkl6ajBFQXdJRFNRQXdSZ0loQU9Sc1lnMUNTc0F5cWtmdlB5MnB4UHAzZlRhR2NyQzFoVUc3SExza0F2cytBaUVBckYyNFQvRWFQdmM3MWQzWFZraVI0MFcxQldwS0RDNjY5a1JOM2ZleWk4ND0iXX0.eyJzdWIiOiJYMTEwNDExNjc1LWh0dHA6Ly9sb2NhbGhvc3Q6NDY2NjciLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjQ2NjY3IiwiYWNyIjoiZ2VtYXRpay1laGVhbHRoLWxvYS1zdWJzdGFudGlhbCIsInVybjp0ZWxlbWF0aWs6Y2xhaW1zOnByb2Zlc3Npb24iOiIxLjIuMjc2LjAuNzYuNC40OSIsInVybjp0ZWxlbWF0aWs6YXV0aDpjb25zZW50IjpbImxvYS1zdWJzdGFudGlhbCJdLCJ1cm46dGVsZW1hdGlrOmNsYWltczppZCI6IlgxMTA0MTE2NzUiLCJ1cm46dGVsZW1hdGlrOmNsYWltczpvcmdhbml6YXRpb24iOiIxMDk1MDA5NjkiLCJhbXIiOlsidXJuOnRlbGVtYXRpazphdXRoOmVHSyJdLCJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwODUiLCJleHAiOjE3NjE0NTkyMjEsImlhdCI6MTc2MTQ1ODkyMSwibm9uY2UiOiI0MiJ9.-GjO_zb2rQf3qAqPMWR7MD5TjxWAHJauJXOmTFVyupZtPIamCwAL3PkssNBSJBhckWQqNlqIc9eCuiBy08QdTw
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_validMaxAge_201" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.007">
+    <system-out><![CDATA[2025-10-26 06:08:41 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:41.482 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_postPar_validMaxAge_201()
+2025-10-26 06:08:41.484 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:41.484 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:41.485 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 12
+2025-10-26 06:08:41.485 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:529857e9204a4fa7:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 6aef31806e5e7286
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:46.485355319Z[Etc/UTC]
+ userData: {}
+]]></system-out>
+  </testcase>
+  <testcase name="test_entityStatement_OpenidProviderClaimsContentCorrect" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.008">
+    <failure message="&#10;Expecting map:&#10;  {&quot;authorization_endpoint&quot;=&quot;http://127.0.0.1:8085/auth&quot;, &quot;claims_parameter_supported&quot;=true, &quot;claims_supported&quot;=[&quot;birthdate&quot;,&#10;    &quot;urn:telematik:claims:profession&quot;,&#10;    &quot;urn:telematik:claims:family_name&quot;,&#10;    &quot;urn:telematik:claims:id&quot;,&#10;    &quot;urn:telematik:claims:organization&quot;,&#10;    &quot;urn:telematik:claims:email&quot;,&#10;    &quot;urn:telematik:claims:geschlecht&quot;,&#10;    &quot;urn:telematik:claims:alter&quot;,&#10;    &quot;urn:telematik:claims:display_name&quot;,&#10;    &quot;urn:telematik:claims:given_name&quot;], &quot;client_registration_types_supported&quot;=[&quot;automatic&quot;], &quot;grant_types_supported&quot;=[&quot;authorization_code&quot;], &quot;id_token_encryption_alg_values_supported&quot;=[&quot;ECDH-ES&quot;], &quot;id_token_encryption_enc_values_supported&quot;=[&quot;A256GCM&quot;], &quot;id_token_signing_alg_values_supported&quot;=[&quot;ES256&quot;], &quot;issuer&quot;=&quot;http://127.0.0.1:8085&quot;, &quot;logo_uri&quot;=&quot;https://raw.githubusercontent.com/gematik/zero-lab/main/static/images/GID_App_light_mode.svg&quot;, &quot;organization_name&quot;=&quot;deprecated gematik sektoraler IDP&quot;, &quot;pushed_authorization_request_endpoint&quot;=&quot;http://127.0.0.1:8085/PAR_Auth&quot;, &quot;request_authentication_methods_supported&quot;={&quot;ar&quot;=[&quot;none&quot;], &quot;par&quot;=[&quot;self_signed_tls_client_auth&quot;]}, &quot;require_pushed_authorization_requests&quot;=true, &quot;response_modes_supported&quot;=[&quot;query&quot;], &quot;response_types_supported&quot;=[&quot;code&quot;], &quot;scopes_supported&quot;=[&quot;urn:telematik:geschlecht&quot;,&#10;    &quot;urn:telematik:alter&quot;,&#10;    &quot;urn:telematik:family_name&quot;,&#10;    &quot;urn:telematik:email&quot;,&#10;    &quot;openid&quot;,&#10;    &quot;urn:telematik:geburtsdatum&quot;,&#10;    &quot;urn:telematik:given_name&quot;,&#10;    &quot;urn:telematik:versicherter&quot;,&#10;    &quot;urn:telematik:display_name&quot;], &quot;signed_jwks_uri&quot;=&quot;http://127.0.0.1:8085/jws.json&quot;, &quot;subject_types_supported&quot;=[&quot;pairwise&quot;], &quot;ti_features_supported&quot;={&quot;id_token_version_supported&quot;=[&quot;1.0.0&quot;]}, &quot;token_endpoint&quot;=&quot;http://127.0.0.1:8085/token&quot;, &quot;token_endpoint_auth_methods_supported&quot;=[&quot;self_signed_tls_client_auth&quot;], &quot;user_type_supported&quot;=[&quot;IP&quot;]}&#10;to contain entries:&#10;  [&quot;issuer&quot;=&quot;https://gsi.dev.gematik.solutions&quot;]&#10;but the following map entries had different values:&#10;  [&quot;issuer&quot;=&quot;http://127.0.0.1:8085&quot; (expected: &quot;https://gsi.dev.gematik.solutions&quot;)]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+
+Expecting map:
+  {"authorization_endpoint"="http://127.0.0.1:8085/auth", "claims_parameter_supported"=true, "claims_supported"=["birthdate",
+    "urn:telematik:claims:profession",
+    "urn:telematik:claims:family_name",
+    "urn:telematik:claims:id",
+    "urn:telematik:claims:organization",
+    "urn:telematik:claims:email",
+    "urn:telematik:claims:geschlecht",
+    "urn:telematik:claims:alter",
+    "urn:telematik:claims:display_name",
+    "urn:telematik:claims:given_name"], "client_registration_types_supported"=["automatic"], "grant_types_supported"=["authorization_code"], "id_token_encryption_alg_values_supported"=["ECDH-ES"], "id_token_encryption_enc_values_supported"=["A256GCM"], "id_token_signing_alg_values_supported"=["ES256"], "issuer"="http://127.0.0.1:8085", "logo_uri"="https://raw.githubusercontent.com/gematik/zero-lab/main/static/images/GID_App_light_mode.svg", "organization_name"="deprecated gematik sektoraler IDP", "pushed_authorization_request_endpoint"="http://127.0.0.1:8085/PAR_Auth", "request_authentication_methods_supported"={"ar"=["none"], "par"=["self_signed_tls_client_auth"]}, "require_pushed_authorization_requests"=true, "response_modes_supported"=["query"], "response_types_supported"=["code"], "scopes_supported"=["urn:telematik:geschlecht",
+    "urn:telematik:alter",
+    "urn:telematik:family_name",
+    "urn:telematik:email",
+    "openid",
+    "urn:telematik:geburtsdatum",
+    "urn:telematik:given_name",
+    "urn:telematik:versicherter",
+    "urn:telematik:display_name"], "signed_jwks_uri"="http://127.0.0.1:8085/jws.json", "subject_types_supported"=["pairwise"], "ti_features_supported"={"id_token_version_supported"=["1.0.0"]}, "token_endpoint"="http://127.0.0.1:8085/token", "token_endpoint_auth_methods_supported"=["self_signed_tls_client_auth"], "user_type_supported"=["IP"]}
+to contain entries:
+  ["issuer"="https://gsi.dev.gematik.solutions"]
+but the following map entries had different values:
+  ["issuer"="http://127.0.0.1:8085" (expected: "https://gsi.dev.gematik.solutions")]
+	at de.gematik.idp.gsi.server.controller.FedIdpControllerTest.test_entityStatement_OpenidProviderClaimsContentCorrect(FedIdpControllerTest.java:276)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></failure>
+    <system-out><![CDATA[2025-10-26 06:08:41 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:41.488 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_entityStatement_OpenidProviderClaimsContentCorrect()
+]]></system-out>
+  </testcase>
+  <testcase name="test_getTokensForCode_invalidCode_400" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.012">
+    <system-out><![CDATA[2025-10-26 06:08:41 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:41.497 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getTokensForCode_invalidCode_400()
+2025-10-26 06:08:41.502 DEBUG [http-nio-auto-7-exec-6] CommonsRequestLoggingFilter:47 - Before request [POST /token, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"151", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept:"application/json", accept-encoding:"gzip", Content-Type:"application/x-www-form-urlencoded;charset=UTF-8"]]
+2025-10-26 06:08:41.503 INFO  [http-nio-auto-7-exec-6] FedIdpController:385 - App2App-Flow: RX message nr 10 (Authorization Code) at http://127.0.0.1:8085
+2025-10-26 06:08:41.503 INFO  [http-nio-auto-7-exec-6] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "unknown code, no session found"
+2025-10-26 06:08:41.504 DEBUG [http-nio-auto-7-exec-6] CommonsRequestLoggingFilter:55 - After request [POST /token, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"151", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept:"application/json", accept-encoding:"gzip", Content-Type:"application/x-www-form-urlencoded;charset=UTF-8"], payload=client_id=https%3A%2F%2FDUMMY_CLIENT.de&code=DUMMY_CODE&code_verifier=DUMMY_CODE_VERIFIER&grant_type=authorization_code&redirect_uri=DUMMY_REDIRECT_URI]
+]]></system-out>
+  </testcase>
+  <testcase name="test_getLandingPage_expiredRequestUri_400" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="6.01">
+    <system-out><![CDATA[2025-10-26 06:08:41 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:41.509 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getLandingPage_expiredRequestUri_400()
+2025-10-26 06:08:41.511 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:41.511 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:41.512 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 13
+2025-10-26 06:08:41.512 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:800ac42cb5c87e52:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: P62rd1KSUnScGIEs1WrpYj3g_poTqmx8mM4msxehNdk
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:given_name]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: c858f33648428e58
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:46.512431555Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:47.515 INFO  [main] FedIdpController:276 - App2App-Flow: RX message nr 6 (Authorization Request) at http://127.0.0.1:8085/auth
+2025-10-26 06:08:47.515 INFO  [main] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "request_uri expired"
+]]></system-out>
+  </testcase>
+  <testcase name="test_entityStatementResponse_JoseHeader" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.003">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.519 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_entityStatementResponse_JoseHeader()
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_missingParameterResponseType_400" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.012">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.523 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_postPar_missingParameterResponseType_400()
+2025-10-26 06:08:47.527 DEBUG [http-nio-auto-7-exec-5] CommonsRequestLoggingFilter:47 - Before request [POST /PAR_Auth, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"285", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept-encoding:"gzip", Content-Type:"application/x-www-form-urlencoded;charset=UTF-8"]]
+2025-10-26 06:08:47.529 INFO  [http-nio-auto-7-exec-5] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "Required request parameter 'response_type' for method parameter type String is not present"
+2025-10-26 06:08:47.531 DEBUG [http-nio-auto-7-exec-5] CommonsRequestLoggingFilter:55 - After request [POST /PAR_Auth, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"285", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept-encoding:"gzip", Content-Type:"application/x-www-form-urlencoded;charset=UTF-8"], payload=acr_values=gematik-ehealth-loa-high&client_id=http%3A%2F%2Flocalhost%3A46667&code_challenge=P62rd1KSUnScGIEs1WrpYj3g_poTqmx8mM4msxehNdk&code_challenge_method=S256&nonce=42&redirect_uri=http%3A%2F%2Flocalhost%3A46667%2FAS&scope=urn%3Atelematik%3Agiven_name+openid&state=state_Fachdienst]
+]]></system-out>
+  </testcase>
+  <testcase name="test_getAuthorizationCode_invalidSelectedClaims_400" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.011">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.536 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getAuthorizationCode_invalidSelectedClaims_400()
+2025-10-26 06:08:47.538 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:47.539 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:47.539 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 13
+2025-10-26 06:08:47.540 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:2b66c6d234492fdb:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 15f3b96eb67a84a9
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:52.539855291Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:47.541 INFO  [main] FedIdpController:310 - App2App-Flow: RX message nr 6 (Authorization Request, getRequestedClaims) at http://127.0.0.1:8085/auth
+2025-10-26 06:08:47.543 INFO  [main] FedIdpController:339 - App2App-Flow: RX message nr 6b/6d (user consent) at http://127.0.0.1:8085
+2025-10-26 06:08:47.543 INFO  [main] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "selected claims exceed scopes in PAR"
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_validScope_201(String)[1]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.005">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.548 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: parRequest_validScope_ResponseStatus_CREATED scope: urn:telematik:geburtsdatum urn:telematik:alter openid
+2025-10-26 06:08:47.550 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:47.550 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:47.551 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 14
+2025-10-26 06:08:47.551 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:f059b8bba8a77627:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 018b0089a28e51bb
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:52.551321156Z[Etc/UTC]
+ userData: {}
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_validScope_201(String)[2]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.005">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.554 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: parRequest_validScope_ResponseStatus_CREATED scope: urn:telematik:display_name
+2025-10-26 06:08:47.556 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:47.556 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:47.557 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 15
+2025-10-26 06:08:47.557 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:63c9aa388d08bb8d:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: a25b76ca5f50ae7d
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:52.557218208Z[Etc/UTC]
+ userData: {}
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_validScope_201(String)[3]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.006">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.560 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: parRequest_validScope_ResponseStatus_CREATED scope: urn:telematik:given_name openid
+2025-10-26 06:08:47.562 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:47.562 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:47.563 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 16
+2025-10-26 06:08:47.563 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:1d9801a75d65b7de:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 463d6d4678208180
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:52.563179782Z[Etc/UTC]
+ userData: {}
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_validScope_201(String)[4]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.006">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.566 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: parRequest_validScope_ResponseStatus_CREATED scope: urn:telematik:geschlecht urn:telematik:versicherter urn:telematik:email
+2025-10-26 06:08:47.568 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:47.569 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:47.569 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 17
+2025-10-26 06:08:47.569 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:ae41ec9fa464c0a4:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 9bd4517c4f92ee41
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:52.569599403Z[Etc/UTC]
+ userData: {}
+]]></system-out>
+  </testcase>
+  <testcase name="test_entityStatement_FederationEntityClaimsContentCorrect" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.003">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.573 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_entityStatement_FederationEntityClaimsContentCorrect()
+]]></system-out>
+  </testcase>
+  <testcase name="test_entityStatement_BodyClaimsComplete" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.003">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.576 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_entityStatement_BodyClaimsComplete()
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_invalidClientId_400" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.006">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.579 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_postPar_invalidClientId_400()
+2025-10-26 06:08:47.581 INFO  [main] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "postPar.fachdienstClientId: must match "^https?://.*$""
+]]></system-out>
+  </testcase>
+  <testcase name="test_entityStatement_OpenidProviderClaimsComplete" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.003">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.585 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_entityStatement_OpenidProviderClaimsComplete()
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_validPrompt_201" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.005">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.588 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_postPar_validPrompt_201()
+2025-10-26 06:08:47.590 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:47.590 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:47.591 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 18
+2025-10-26 06:08:47.591 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:77baec32baea0bda:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 86da528ac947499c
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:52.591165967Z[Etc/UTC]
+ userData: {}
+]]></system-out>
+  </testcase>
+  <testcase name="test_getLandingPage_200(String)[1]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.261">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.595 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getLandingPage_200 idTokenVersion: 1.0.0
+2025-10-26 06:08:47.597 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:47.597 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:47.598 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 19
+2025-10-26 06:08:47.598 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:2b018cd42171c59a:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: P62rd1KSUnScGIEs1WrpYj3g_poTqmx8mM4msxehNdk
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:given_name]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: e4e868435f8c7791
+ idTokenVersion: 1.0.0
+ expiresAt: 2025-10-26T06:08:52.598292233Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:47.602 DEBUG [http-nio-auto-7-exec-7] CommonsRequestLoggingFilter:47 - Before request [GET /auth?request_uri=urn%3Ahttp%3A%2F%2Flocalhost%3A46667%3A2b018cd42171c59a&client_id=http%3A%2F%2Flocalhost%3A46667, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"0", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept-encoding:"gzip"]]
+2025-10-26 06:08:47.603 INFO  [http-nio-auto-7-exec-7] FedIdpController:276 - App2App-Flow: RX message nr 6 (Authorization Request) at http://127.0.0.1:8085/auth
+2025-10-26 06:08:47.603 INFO  [http-nio-auto-7-exec-7] FedIdpController:278 - request_uri: urn:http://localhost:46667:2b018cd42171c59a, client_id: http://localhost:46667
+2025-10-26 06:08:47.851 DEBUG [http-nio-auto-7-exec-7] CommonsRequestLoggingFilter:55 - After request [GET /auth?request_uri=urn%3Ahttp%3A%2F%2Flocalhost%3A46667%3A2b018cd42171c59a&client_id=http%3A%2F%2Flocalhost%3A46667, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"0", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept-encoding:"gzip"]]
+]]></system-out>
+  </testcase>
+  <testcase name="test_getLandingPage_200(String)[2]" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.025">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.856 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getLandingPage_200 idTokenVersion: 2.0.0
+2025-10-26 06:08:47.858 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:47.859 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:47.859 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 20
+2025-10-26 06:08:47.859 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:d0fc0d48d9e76c32:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: P62rd1KSUnScGIEs1WrpYj3g_poTqmx8mM4msxehNdk
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:given_name]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 5810281f8661f41d
+ idTokenVersion: 2.0.0
+ expiresAt: 2025-10-26T06:08:52.859710253Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:47.862 DEBUG [http-nio-auto-7-exec-8] CommonsRequestLoggingFilter:47 - Before request [GET /auth?request_uri=urn%3Ahttp%3A%2F%2Flocalhost%3A46667%3Ad0fc0d48d9e76c32&client_id=http%3A%2F%2Flocalhost%3A46667, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"0", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept-encoding:"gzip"]]
+2025-10-26 06:08:47.863 INFO  [http-nio-auto-7-exec-8] FedIdpController:276 - App2App-Flow: RX message nr 6 (Authorization Request) at http://127.0.0.1:8085/auth
+2025-10-26 06:08:47.863 INFO  [http-nio-auto-7-exec-8] FedIdpController:278 - request_uri: urn:http://localhost:46667:d0fc0d48d9e76c32, client_id: http://localhost:46667
+2025-10-26 06:08:47.877 DEBUG [http-nio-auto-7-exec-8] CommonsRequestLoggingFilter:55 - After request [GET /auth?request_uri=urn%3Ahttp%3A%2F%2Flocalhost%3A46667%3Ad0fc0d48d9e76c32&client_id=http%3A%2F%2Flocalhost%3A46667, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"0", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept-encoding:"gzip"]]
+]]></system-out>
+  </testcase>
+  <testcase name="test_getLandingPage_invalidClientId_mockedValidation_testErrorResponse_400" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.01">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.882 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getLandingPage_invalidClientId_mockedValidation_testErrorResponse_400()
+2025-10-26 06:08:47.884 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:47.885 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:47.885 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 21
+2025-10-26 06:08:47.885 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:72e26da8b0b67221:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: P62rd1KSUnScGIEs1WrpYj3g_poTqmx8mM4msxehNdk
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:given_name]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: c72dd5e3f97ed931
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:52.885684326Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:47.887 INFO  [main] FedIdpController:276 - App2App-Flow: RX message nr 6 (Authorization Request) at http://127.0.0.1:8085/auth
+2025-10-26 06:08:47.888 INFO  [main] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "unknown client_id"
+]]></system-out>
+  </testcase>
+  <testcase name="test_postPar_claimsParamJsonButNotClaims_400" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.005">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.892 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_postPar_claimsParamJsonButNotClaims_400()
+2025-10-26 06:08:47.894 INFO  [main] GsiExceptionHandler:52 - GsiException: 400 BAD_REQUEST "parameter claims has invalid structure"
+]]></system-out>
+  </testcase>
+  <testcase name="test_signedJwksResponse_BodyClaims" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.003">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.898 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_signedJwksResponse_BodyClaims()
+]]></system-out>
+  </testcase>
+  <testcase name="test_getTokensForCode_invalidGetOnPostMapping_405" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.009">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.902 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getTokensForCode_invalidGetOnPostMapping_405()
+2025-10-26 06:08:47.906 DEBUG [http-nio-auto-7-exec-9] CommonsRequestLoggingFilter:47 - Before request [GET /token?client_id=http%3A%2F%2Flocalhost%3A46667&grant_type=state_Fachdienst&redirect_uri=http%3A%2F%2Flocalhost%3A46667%2FAS&code_verifier=P62rd1KSUnScGIEs1WrpYj3g_poTqmx8mM4msxehNdk&code=S256&response_type=code, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"0", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept-encoding:"gzip"]]
+2025-10-26 06:08:47.906 INFO  [http-nio-auto-7-exec-9] GsiExceptionHandler:52 - GsiException: 405 METHOD_NOT_ALLOWED "Invalid Request"
+2025-10-26 06:08:47.907 DEBUG [http-nio-auto-7-exec-9] CommonsRequestLoggingFilter:55 - After request [GET /token?client_id=http%3A%2F%2Flocalhost%3A46667&grant_type=state_Fachdienst&redirect_uri=http%3A%2F%2Flocalhost%3A46667%2FAS&code_verifier=P62rd1KSUnScGIEs1WrpYj3g_poTqmx8mM4msxehNdk&code=S256&response_type=code, client=127.0.0.1, headers=[connection:"Upgrade, HTTP2-Settings", content-length:"0", host:"localhost:46667", http2-settings:"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA", upgrade:"h2c", user-agent:"Java-http-client/21.0.8", accept-encoding:"gzip"]]
+]]></system-out>
+  </testcase>
+  <testcase name="test_getRequestedClaims_200" classname="de.gematik.idp.gsi.server.controller.FedIdpControllerTest" time="0.014">
+    <system-out><![CDATA[2025-10-26 06:08:47 5.15.0 INFO Initializing Spring TestDispatcherServlet '' 
+2025-10-26 06:08:47.911 INFO  [main] FedIdpControllerTest:187 - START UNIT TEST: test_getRequestedClaims_200()
+2025-10-26 06:08:47.913 INFO  [main] FedIdpController:199 - App2App-Flow: RX message nr 2 (Pushed Authorization Request) received at http://127.0.0.1:8085
+2025-10-26 06:08:47.914 INFO  [main] FedIdpController:211 - Autoregistration done
+2025-10-26 06:08:47.914 INFO  [main] FedIdpController:224 - Amount of stored fedIdpAuthSessions: 22
+2025-10-26 06:08:47.914 INFO  [main] FedIdpController:250 - Stored FedIdpAuthSession under requestUri urn:http://localhost:46667:ed45299eebf4d227:
+ fachdienstClientId: http://localhost:46667
+ fachdienstCodeChallenge: bjPyQTcTrth3JrXZ3Wf2lDV3zQUCnz7Wbnd1JQj9Sak
+ fachdienstCodeChallengeMethod: S256
+ fachdienstNonce: 42
+ requestedOptionalClaims: [urn:telematik:claims:profession, urn:telematik:claims:id, urn:telematik:claims:organization, urn:telematik:claims:given_name]
+ requestedEssentialClaims: []
+ essentialRequestedAcr: []
+ essentialRequestedAmr: []
+ fachdienstRedirectUri: http://localhost:46667/AS
+ authorizationCode: 23b727aa3d4aa75f
+ idTokenVersion: null
+ expiresAt: 2025-10-26T06:08:52.914646188Z[Etc/UTC]
+ userData: {}
+2025-10-26 06:08:47.916 INFO  [main] FedIdpController:310 - App2App-Flow: RX message nr 6 (Authorization Request, getRequestedClaims) at http://127.0.0.1:8085/auth
+]]></system-out>
+  </testcase>
+</testsuite>
